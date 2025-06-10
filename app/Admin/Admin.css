@@ -1,0 +1,19 @@
+.bimage{
+    position: relative;
+  z-index: 0;
+  overflow: hidden;
+  /* background-color:#353b48; */
+}
+.bimage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('/bb.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.3; 
+  z-index: -1;
+}

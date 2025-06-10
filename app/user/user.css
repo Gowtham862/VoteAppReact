@@ -1,0 +1,26 @@
+.color {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+   background-color:#353b48;
+}
+
+.color::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('/replace.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.3; 
+  z-index: -1;
+}
+
+.error{
+    color: red;
+    font-size: 14px;
+    margin-left: 3px;
+}
