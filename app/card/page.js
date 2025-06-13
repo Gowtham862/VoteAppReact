@@ -1,45 +1,88 @@
+"use client"
 import React from "react";
 import "./page.css";
+import { useRouter } from "next/navigation";
+
+
 
 const userdata = [
   {
     name: "TVK",
     city: "Vijay",
-    profile:"/tvk.jpg"
+    profile:"/tvkvijay.webp",
+    vote:" Tvk"
   },
   {
     name: "DMK",
     city: "M.K STALIN",
-       profile:"/dmk.jpg"
+       profile:"/dmk2.webp",
+       vote:" Dmk"
   },
   {
     name: "ADMK",
     city: " k Palaniswami ",
-     profile:"/admk.avif"
+     profile:"/admkk.png",
+      vote:" Admk"
   },
   {
     name: "DMDK",
     city: " Vijayakant",
-      profile:"/tvk.jpg"
+      profile:"/go.png",
+       vote:" Dmdk"
   },
   {
-    name: "BJB",
+    name: "BJp",
     city: "Annamalai",
-       profile:"/tvk.jpg"
+       profile:"/Bjb.webp",
+       vote:" Bjp"
   },
   {
     name: "INC",
     city: "Rahul",
-       profile:"/tvk.jpg"
+       profile:"/inc.webp",
+       vote:" Inc"
   },
 ];
+
 function User(props) {
+
+    const router = useRouter();
+//  console.log("Selected Party:", props.name);
+  const votenow = async (e) => {
+     e.preventDefault();
+    console.log("Selected Party:", props.name);
+        try {
+      // console.log("hlo",party);
+      const party=    props.name;
+       console.log(party);
+      router.push('/home'); 
+      const response = await fetch("http://192.168.68.124:8080/api/votes/increment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({party: party }),
+      });
+ 
+      const result = await response.text();
+      alert(result);
+      console.log(result);
+      
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
+
+ // console.log(props.name);
+   
+    
+      // router.push(`/voted?party=${props.name}`);
+  };
   return (
     <div className="cards">
       {/* <span className="player online">Football player</span> */}
       <img  src={props.profile} className="imgaa" alt="user" />
-      <h3 className="heading">{props.name}</h3>
-      <h3  className="heading my-3"> Name:{props.city}</h3>
+      <h3 className="heading h4">{props.name}</h3>
+      <h3  className="heading my-3 h5"> Name:{props.city}</h3>
       <p>
         politics is a powerful force that shapes societies, influences decisions,
         and determines the direction of a nation. It involves the process of
@@ -48,7 +91,7 @@ function User(props) {
       </p>
       <div className="button"></div>
       <div className="skills">
-        <button  className="proved">Vote Now</button>
+        <button onClick={votenow}  className="proved">vote for{props.vote}</button>
       </div>
     </div>
   );
@@ -64,6 +107,7 @@ export default function card() {
           city={user.city}
           skills={user.skills}
           profile={user.profile}
+          vote={user.vote}
         />
       ))}
     </div>

@@ -4,15 +4,23 @@ import "./user.css";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const user = useRouter();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [errorm, seterrorm] = useState("");
   const [errorpass, seterrorpass] = useState("");
-  const user = useRouter();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+  
   const handlelogin = async (e) => {
+     
     e.preventDefault();
-
+// if(email==24&&password==24)
+// {
+//    user.push("/card");
+// }
     // Validation
     if (!email) {
       seterrorm("Email can not be null");
@@ -24,27 +32,33 @@ export default function Home() {
     }
 
     // Check hardcoded credentials
-   
+
     try {
-      const response = await fetch("http://192.168.68.125:8080/api/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "http://192.168.68.124:8080/api/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
-        const result = await response.text();
-         const isSuccess = result === "true";
-       if (isSuccess) {
-      user.push("/card");
-      seterrorm("");
-    } else {
-      seterrorm("Enter a valid email");
-      seterrorpass("Enter a valid password");
-    }
+      const result = await response.text();
+      const isSuccess = result === "true";
+        console.log(isSuccess);
 
-     // alert(result);
+      if (isSuccess) {
+        console.log("hlo");
+        user.push("/card");
+        seterrorm("");
+      } else {
+        seterrorm("Enter a valid email");
+        seterrorpass("Your are alraedy voted");
+      }
+
+      // alert(result);
       setemail("");
       setpassword("");
     } catch (error) {
@@ -64,7 +78,7 @@ export default function Home() {
           <h1>Login</h1>
 
           <div className="mb-3">
-            <label className="mb-1" htmlFor="email">
+            <label className="mb-3" htmlFor="email">
               Enter the email
             </label>
             {errorm && <p className="error">{errorm}</p>}
@@ -78,8 +92,8 @@ export default function Home() {
           </div>
 
           <div className="mb-3">
-            <label className="mb-1" htmlFor="password">
-              Enter the Password
+            <label className="mb-3" htmlFor="password">
+              Enter the Voter id to vote
             </label>
             {errorpass && <p className="error">{errorpass}</p>}
             <input

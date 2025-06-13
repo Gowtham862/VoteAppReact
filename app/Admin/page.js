@@ -5,11 +5,25 @@ import "./Admin.css"
 export default function Home() {
   const [email,setemail]=useState("");
   const [password,setpassword]=useState("");
+  const [emailerr,setemailerr]=useState("");
+  const[passeror,setpasseror]=useState("");
   const router=useRouter();
   const back=()=>{
     router.push('/')// user to see my webpage and go back
   }
-  const welcome=()=>{
+  const welcome=(e)=>{
+   e.preventDefault();
+   if(!email)
+  {
+    setemailerr("Email cannot be null");
+    return ;
+  }
+  if(!password)
+  {
+    setpasseror("Password cannot be null");
+  }
+  setemail("");
+  setpassword("");
     if(email&&password==24)
     {
     router.push('/vote')
@@ -17,6 +31,7 @@ export default function Home() {
      else {
       alert('Enter valid name or password!');
   }
+  
   }
  
   return (
@@ -25,13 +40,15 @@ export default function Home() {
      <div className="d-flex justify-content-center align-items-center centered-form">
     <form className="form-box">
       <h4 className="text-center mb-4"> Admin Login</h4>
-      <div className="mb-3">
+      <div className="mb-0">
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-        <input type="email" value={email}  onChange={(e) => setemail(e.target.value)} className="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+      { emailerr&& <p className="adminerror">{emailerr}</p>}
+        <input value={email}  onChange={(e) => setemail(e.target.value)} className="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"/>
         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
       </div>
-      <div className="mb-3">
+      <div className="mb-2 ">
         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+        {passeror&&<p className="adminerror">{passeror}</p>}
         <input type="password" value={password}  onChange={(e) => setpassword(e.target.value)} className="form-control form-control-sm" id="exampleInputPassword1"/>
       </div>
       <div className="mb-3 form-check">

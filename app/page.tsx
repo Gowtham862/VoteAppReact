@@ -12,6 +12,7 @@ export default function Home() {
     router.push('/user');} // Navigate to /Admin
   return (
     <div>
+      
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <Link className="navbar-brand" href='./home  '>
@@ -51,10 +52,13 @@ export default function Home() {
                 </a>
               </li>
             </ul>
+            
           </div>
         </div>
       </nav>
-     
+     <div >
+      
+        </div>
         <div className='buttons'>
       
  
@@ -64,8 +68,8 @@ export default function Home() {
        
     </div>
  
- <img src="/vote.png" className="img-fluid" alt="Responsive image"></img>
- {/* <div className='bg'></div> */}
+ 
+ <div className='bg'></div>
  </div>
 
     </div>

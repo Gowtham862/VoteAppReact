@@ -1,0 +1,56 @@
+.form-select:focus {
+  box-shadow: none !important;
+  border-color: rgb(220, 243, 89) !important; 
+  
+}
+.hlo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 87.7vh;
+}
+.form-box{
+  width: 300px;
+        border: 1px solid #dee2e6;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      
+}
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: rgb(243, 89, 115) !important;
+  
+}
+ .color {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+   background-color:#353b48;
+}
+
+.color::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  
+   background-image: url('/signup.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.3; 
+  z-index: -1;
+}
+ .slider-container {
+      overflow: hidden;
+      width: 100%;
+       display: flex;
+      align-items: end;
+         
+    }
+    .optioner{
+       color: red;
+    }

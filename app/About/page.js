@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import "./signup.css";
+import Link from "next/link";
 export default function page() {
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +41,7 @@ export default function page() {
       setpasswordvalid("password cannot be null");
       return;
     } else if (!passwordR.test(password)) {
-      setpasswordvalid("set a valid password");
+      setpasswordvalid("Password must be at least 8 characters and include a capital letter, small letter, number, and special symbol like @ or #.");
       return;
     }
     if(!dob)
@@ -75,7 +76,7 @@ export default function page() {
     console.log("Username entered:", phn_no);
     try {
       const response = await fetch(
-        "http://192.168.68.125:8080/api/user/signup",
+        "http://192.168.68.124:8080/api/user/signup",
         {
           method: "POST",
           headers: {
@@ -88,7 +89,7 @@ export default function page() {
             password: password,
             dob: dob,
             phn_no: phn_no,
-          }),
+          }),   
         }
       );
       console.log("ggg");
@@ -115,7 +116,7 @@ export default function page() {
                 aria-placeholder="Enter the enail"
                 htmlFor="email"
               >
-                Enter the Email
+                Create your Email
               </label>
               {emailvalid && (
                 <div className="form-text text-danger">{emailvalid} </div>
@@ -131,7 +132,7 @@ export default function page() {
             </div>
             <div className="mb-3">
               <label className="mb-1" htmlFor="password">
-                Enter the password
+                Create your Voteid
               </label>
               {passwordvalid && (
                 <div className="form-text text-danger">{passwordvalid} </div>
@@ -176,6 +177,7 @@ export default function page() {
               >
                 Signup
               </button>
+              <Link href='./user'  className="mb-3 text-warning ">click back to login</Link>
             </div>
           </form>
         </div>

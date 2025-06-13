@@ -1,9 +1,11 @@
 
-.container{
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   align-items: center;}
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    align-items: end;}
+
    .pro{
     /* border: 1px solid black; */
     width: 250px;
@@ -28,14 +30,7 @@
   
   /* or 100% if parent has defined height */
 }
-/* .bg { */
-  /* background-image: url('/votes.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 1280px;
-  
-} */
+
 .bcolor{
   background-color: #353b48;
    /* height: 90vh; */
@@ -45,3 +40,35 @@
   box-shadow: none !important;
   border-color: rgb(220, 243, 89) !important;
 }
+.slider-container {
+      overflow: hidden;
+      width: 100%;
+       display: flex;
+      align-items: end;
+         height: 80vh; 
+    }
+
+    .slider-track {
+      display: flex;
+   
+      gap: 20px;
+      width: max-content;
+      animation: scrollLeft 30s linear infinite;
+    }
+
+    .slider-track img {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+    }
+     @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .homep{
+      width: 500px;
+    }

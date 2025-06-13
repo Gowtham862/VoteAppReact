@@ -1,0 +1,10 @@
+.adminback{
+    display: flex;
+    /* flex-direction: column; */
+ flex-grow: 1;
+ flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    
+
+}
