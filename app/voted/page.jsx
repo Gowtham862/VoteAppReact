@@ -1,12 +1,30 @@
 "use client"
+
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import './vote.css'
+
+
+
 export default function Homead() {
+  const router = useRouter();
+   
+const sendUserData = (e) => {
+  e.preventDefault();
+    const name = "Gowtham";
+    const age = 25;
+    const city = "Salem";
+    
+    // Send data through query params
+    router.push(`/user?name=${name}&age=${age}&city=${city}`);
+  };
+
+
   // const [party, setparty] = useState("");
    const[name,setname]=useState("");
    const[voteid,setvoteid]=useState("");
   const[namerr,setnamerr]=useState("");
-  const [optionerror,setoptionerror]=useState("");
+  // const [optionerror,setoptionerror]=useState("");
   const[voteiderr,setvoteiderr]=useState("");
   const handleChange = (e) => {
     setparty(e.target.value);
@@ -30,12 +48,12 @@ export default function Homead() {
       return ;
     }
    setnamerr("");
-   setoptionerror("");
+  //  setoptionerror("");
    setvoteiderr("");
     try {
       // console.log("hlo",party);
       console.log("voteid",voteid);
-      const response = await fetch("http://192.168.68.113:8080/api/votes/increment", {
+      const response = await fetch("http://192.168.68.146:8080/api/votes/increment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +74,7 @@ export default function Homead() {
 
   return (
     <div className='color'>
-      
+        
            <div className=' p-2 text-bg-info d-flex justify-content-center'>
             Welcome, proud citizens aged 20!
         Your voice matters now more than ever.
@@ -70,7 +88,7 @@ export default function Homead() {
           <h3>vote day</h3>
           <div className='mb-3'>
                 <label  className="mb-1" htmlFor=" ">Enter your Full Name</label>
-              { namerr&& <p className='optioner'>{namerr}</p>}
+              {/* { namerr&& <p className='optioner'>{namerr}</p>} */}
            <input value={name} onChange={(e)=>setname(e.target.value)} className='form-control form-control-sm'  ></input>
           </div>
           <div className='mb-3'>
@@ -79,7 +97,8 @@ export default function Homead() {
            <input value={voteid} onChange={(e)=>setvoteid(e.target.value)}
            className='form-control form-control-sm '  ></input>
           </div>
-        {optionerror&&  <p className='optioner'>{optionerror}</p>}
+          <p>hlo</p>
+        {/* {optionerror&&  <p className='optioner'>{optionerror}</p>} */}
       {/* <select className="form-select ff" onChange={handleChange}>
       
         <option value="">select</option>
@@ -90,7 +109,8 @@ export default function Homead() {
         <option value="Inc">Inc</option>
         <option value="Dmk">Dmk</option>
       </select> */}
-        <button className="btn btn bg-danger text-dark btn-sm w-100 mt-3" onClick={handleSubmit}>
+    
+        <button className="btn btn bg-danger text-dark btn-sm w-100 mt-3" onClick={sendUserData}>
         Submit
       </button>
 </form>
@@ -99,7 +119,8 @@ export default function Homead() {
     
     </div>
     </div>
-   
+ 
+     
     </div>
 
   );

@@ -11,67 +11,45 @@ export default function Home() {
     const gotouser = () => {
     router.push('/user');} // Navigate to /Admin
   return (
-    <div>
-      
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <Link className="navbar-brand" href='./home  '>
-            About us
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" href="#">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Help
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  
-                </a>
-              </li>
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
-     <div >
-      
-        </div>
-        <div className='buttons'>
-      
- 
-  <div className="container">
-        <div onClick={adminback} className="  pro bg-info">Admin</div>
-        <div onClick={gotouser} className="pro  bg-danger">User</div>
-       
-    </div>
- 
- 
- <div className='bg'></div>
- </div>
 
+ <div className="kkk">
+      <div className="header">
+        <Link href='./home' className="underline">About</Link>
+        <div className="underline">Home</div>
+        <div className="underline">Help</div>
+        <div className="underline">Features</div>
+      </div >
+     
+       <div  className="ner">
+        <div onClick={adminback} className=" pro  ">Admin</div>
+        <div onClick={gotouser} className=" pro ">User</div>
+      </div>
+    
+    
+     
+      <div>
+        <div className="slider-container">
+  <div className="slider-track">
+    <img src="./vote5.jpg" alt="Image" />
+    <img src="./vote6.png" alt="Image" />
+    <img src="./vote8.jpg" alt="Image" />
+    <img src="./vote7.png" alt="Image" />
+    <img src="./vote10.webp"alt="Responsive image" />
+    <img src="./new.avif" alt="Image" />
+   
+    <img src="./signup.jpg" alt="Image" />
+        <img src="./tnlogo.png" alt="Image" />
+    <img src="./voteforinfia.jpg" alt="Image" />
+    <img src="./signup.jpg" alt="Image" />
+
+    
+   
+  </div>
+ 
+</div>
+  {/* <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, illum.</p> */}
+      </div>
+     
     </div>
   );
 };

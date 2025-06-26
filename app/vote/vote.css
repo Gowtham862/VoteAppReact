@@ -1,10 +1,12 @@
-.adminback{
-    display: flex;
-    /* flex-direction: column; */
- flex-grow: 1;
- flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    
+.body{
+    margin: 0;
+    padding: 0;
 
+}
+.adminheader{
+    height: 100vh;
+    background-color: rgb(2,16,40);
+}
+.admin{
+    color:whitesmoke;
 }

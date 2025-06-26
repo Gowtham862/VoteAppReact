@@ -46,3 +46,42 @@ button.proved {
   color: white;
   padding: 10px 40px;
 }
+.con{
+
+    display: grid;
+    place-items: center;
+   
+}
+.toas{
+    position: fixed;
+    top: 20px   ;
+    right: 20px;
+}
+.ttt{
+     background-color: rgb(224, 230, 228);
+     color: black;
+     padding: 5px,10px;
+     min-width: 500px;
+     border-radius: 3px;
+     box-shadow: rgb(0,0,0,0.16) 0px 1px 4px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+    animation: slide 1s 1;
+}
+.toas span{
+    font-size: 25px;
+    cursor:pointer;
+}
+@keyframes slide {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.proved:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}

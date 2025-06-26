@@ -1,18 +1,29 @@
 "use client"
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./Admin.css"
 export default function Home() {
   const [email,setemail]=useState("");
   const [password,setpassword]=useState("");
   const [emailerr,setemailerr]=useState("");
   const[passeror,setpasseror]=useState("");
+  const inputfocus=useRef(null);
   const router=useRouter();
   const back=()=>{
     router.push('/')// user to see my webpage and go back
   }
   const welcome=(e)=>{
    e.preventDefault();
+  //  inputfocus.current.focus();
+  // //  inputfocus.current.style.backgroundcolor="gray";
+  //  inputfocus.current.style.boxshadow = "none"; 
+  //  inputfocus.current.style.bordercolor = "green"; 
+  //  inputfocus.current.focus();
+ 
+  // inputfocus.current.style.boxShadow = "none";
+  // inputfocus.current.style.borderColor = "green";
+
+
    if(!email)
   {
     setemailerr("Email cannot be null");
@@ -26,7 +37,7 @@ export default function Home() {
   setpassword("");
     if(email&&password==24)
     {
-    router.push('/vote')
+    router.push('/Dahboard')
     }// want to navigate admin to see votes 
      else {
       alert('Enter valid name or password!');
@@ -38,7 +49,7 @@ export default function Home() {
     
    <div className="bimage">
      <div className="d-flex justify-content-center align-items-center centered-form">
-    <form className="form-box">
+    <form className="form-box formbgcolor">
       <h4 className="text-center mb-4"> Admin Login</h4>
       <div className="mb-0">
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -49,7 +60,7 @@ export default function Home() {
       <div className="mb-2 ">
         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
         {passeror&&<p className="adminerror">{passeror}</p>}
-        <input type="password" value={password}  onChange={(e) => setpassword(e.target.value)} className="form-control form-control-sm" id="exampleInputPassword1"/>
+        <input type="password" value={password} ref={inputfocus}  onChange={(e) => setpassword(e.target.value)} className="form-control form-control-sm" id="exampleInputPassword1"/>
       </div>
       <div className="mb-3 form-check">
         <input type="checkbox" className="form-check-input" id="exampleCheck1"/>

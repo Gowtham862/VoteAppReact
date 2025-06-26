@@ -24,3 +24,11 @@
     font-size: 14px;
     /* margin-left: 3px; */
 }
+/* .btn.change{
+   font-weight: bold;
+} */
+.btn.change:hover {
+  background-color:#353b48 !important;
+  color: yellow !important;
+  font-weight: bold;
+}

@@ -1,0 +1,43 @@
+
+.h-2{
+    height: 30px;
+      background-color: rgb(182, 183, 184);
+    color: aliceblue;
+    height: 50px;
+    display: flex;
+    align-items: center;
+     position: relative;
+    
+}
+.logout{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    position: absolute;
+    top: 15px;
+    right:  0;
+   
+}
+
+.maincontent{
+    display: flex;
+    gap:8;
+    justify-content: center;
+    position: relative;
+    /* flex-grow: 1; */
+    /* flex-wrap: wrap; */
+    top: 40px;
+}
+.con-move{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 150px;
+    font-weight: 600;
+     box-shadow: 0 4px 8px rgba(231, 226, 226, 0.1);
+    /* font-size:large; */
+}
+.content-center{
+    position: relative;
+    top: 70px;
+}

@@ -9,11 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-react": "^2.3.0",
+    "@coreui/react": "^5.7.0",
     "axios": "^1.9.0",
+    "bcrypt": "^6.0.0",
     "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "next": "15.3.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "swr": "^2.3.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
