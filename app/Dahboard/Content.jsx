@@ -1,7 +1,7 @@
 "use client"
 import "../Dahboard/content.css";
 import { useRouter } from 'next/navigation';
-export default function Content() {
+export default function Content({ toggleSidebar }) {
     const router=useRouter();
 
     const backhome=()=>{
@@ -9,7 +9,8 @@ export default function Content() {
     }
   return (
     <div className="">
-      <div className="contentheader    h-2">dashboard</div>
+      <div className="contentheader    h-2">            <img  onClick={toggleSidebar}  className="logo rounded" src="./menu.png"></img>
+      dashboard</div>
       <div>
         {/* <h5 className="">dashboard</h5> */}
       </div>
@@ -20,18 +21,18 @@ export default function Content() {
       </div>
 
       <div className="maincontent ">
-        <div className="borderm rounded w-25 con-move bg-info "> 69 users</div>
+        <div className="borderm rounded w-25 con-move bg-info ">   <img className="logo rounded" src="./account.png"></img> 69 users</div>
         <div className="border rounded w-25  con-move bg-success"> 7 party</div>
         <div className="border rounded w-25 con-move bg-warning">
           {" "}
           5667 totalvote
         </div>
         <div className="border rounded w-25 con-move bg-danger">
-          loading...{" "}
+          Districts{" "}
         </div>
       </div>
       <div className="content-center">
-        
+      
       </div>
     </div>
   );

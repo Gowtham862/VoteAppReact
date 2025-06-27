@@ -30,7 +30,7 @@ export default function Home() {
     if (sentemail && sentdistrict) {
       console.log(sentdistrict);
       console.log("sucess gowtham");
-      fetch("http://192.168.68.146:8080/api/candidates/verify-and-get", {
+      fetch("http://192.168.68.121:8080/api/candidates/verify-and-get", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export default function Home() {
     }
     try {
       const response = await fetch(
-        "http://192.168.68.146:8080/api/user/login",
+        "http://192.168.68.121:8080/api/user/login",
         {
           method: "POST",
           headers: {
@@ -89,7 +89,7 @@ export default function Home() {
 
       console.log(result.email);
       console.log("districr" + result.token);
-      console.log(result.phn_no);
+      console.log(result.location);
       setsentemail(result.email);
       setsentdistrict(result.district);
    const storedToken=    localStorage.setItem("token", result.token);
@@ -111,7 +111,7 @@ export default function Home() {
       <div className="d-flex justify-content-center align-items-center centered-form">
         {/* i need to check */}
         <form onSubmit={handlelogin} className="form-box">
-          <h1>Login</h1>
+          <h4> User Login</h4>
 
           <div className="mb-3">
             <label className="mb-3" htmlFor="email">

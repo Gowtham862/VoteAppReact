@@ -39,7 +39,7 @@ logouthom.push('/user');
       console.log(party);
        console.log("notcomplede"+validtoken);
       const response = await fetch(
-        "http://192.168.68.146:8080/api/votes/increment",
+        "http://192.168.68.121:8080/api/votes/increment",
         {
           method: "POST",
           headers: {

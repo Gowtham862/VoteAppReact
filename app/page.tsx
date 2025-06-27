@@ -13,7 +13,7 @@ export default function Home() {
   return (
 
  <div className="kkk">
-      <div className="header">
+      <div className="hea">
         <Link href='./home' className="underline">About</Link>
         <div className="underline">Home</div>
         <div className="underline">Help</div>
@@ -23,6 +23,7 @@ export default function Home() {
        <div  className="ner">
         <div onClick={adminback} className=" pro  ">Admin</div>
         <div onClick={gotouser} className=" pro ">User</div>
+      
       </div>
     
     

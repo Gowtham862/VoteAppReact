@@ -1,5 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation";
+import { Ripple } from "react-css-spinners";
 import { useRef, useState } from "react";
 import "./Admin.css"
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
   const [password,setpassword]=useState("");
   const [emailerr,setemailerr]=useState("");
   const[passeror,setpasseror]=useState("");
+  const[loader,setloader]=useState(false);
   const inputfocus=useRef(null);
   const router=useRouter();
   const back=()=>{
@@ -35,16 +37,19 @@ export default function Home() {
   }
   setemail("");
   setpassword("");
+   setloader(true);
+  setTimeout(()=>{
     if(email&&password==24)
     {
+     
     router.push('/Dahboard')
     }// want to navigate admin to see votes 
      else {
+      setloader(false);
       alert('Enter valid name or password!');
   }
-  
-  }
- 
+ }
+),3000}
   return (
     
    <div className="bimage">
@@ -65,11 +70,29 @@ export default function Home() {
       <div className="mb-3 form-check">
         <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
         <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-      </div>
+      </div >
+    {loader && (
+    <div style={{
+      position: 'absolute',
+      top: '70%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 10,
+    }}>
+      {/* <Ripple 
+        color="rgb(13, 16, 24)" 
+        size="100"
+        thickness={4}
+      /> */}
+      <div className="spinner-border  text-warning" role="status">
+  <span className="sr-only"></span>
+</div>
+    </div>
+  )}
       <button onClick={welcome} type="submit" className="btn btn-primary btn-sm w-100">Submit</button>
     </form>
   </div>
-    <button onClick={back}>gowtham</button>
+    <button  onClick={back}>gowtham</button>
    </div>
     
   );

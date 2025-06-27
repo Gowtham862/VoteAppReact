@@ -7,12 +7,13 @@ import "./signup.css";
 import Link from "next/link";
 export default function page() {
   const [districts, setDistricts] = useState([]);
+
   useEffect(() => {
     user();
   }, []);
   const user = () => {
     console.log("gowtham get ready");
-    fetch("http://192.168.68.146:8080/api/districts")
+    fetch("http://192.168.68.121:8080/district/all")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched data:", data);
@@ -31,10 +32,20 @@ export default function page() {
       });
   };
   const [email, setemail] = useState("");
-  const [password, setPassword] = useState("");
+  const [voterid, setvoterid] = useState("");
   const [dob, setdob] = useState("");
-  const [phn_no, setphn_no] = useState("");
+  const [location, setlocation] = useState("");
+  const [districtId, setdistrictId] = useState(null);
+   
 
+  const handleChange=(e)=>{
+     const value = e.target.value;
+     const indexInSelect = e.target.selectedIndex;
+     setlocation(value);
+      // const indexInDistricts = indexInSelect - 1;
+      setdistrictId(indexInSelect);
+
+  }
   //For validations
   const [emailvalid, setemailvalid] = useState("");
   const [passwordvalid, setpasswordvalid] = useState("");
@@ -61,12 +72,12 @@ export default function page() {
       setemailvalid("Please enter a valid Gmail address.");
       return;
     }
-    if (!password) {
+    if (!voterid) {
       setpasswordvalid("password cannot be null");
       return;
-    } else if (!passwordR.test(password)) {
+    } else if (!passwordR.test(voterid)) {
       setpasswordvalid(
-        "Password must be at least 8 characters and include a capital letter, small letter, number, and special symbol like @ or #."
+        "Password must be at least 8"
       );
       return;
     }
@@ -77,7 +88,7 @@ export default function page() {
       setdateofbirthvalid("You are not eligible for vote");
       return;
     }
-    if (!phn_no) {
+    if (!location) {
       setphonenumbervalid("Enter the division");
       return;
     }
@@ -88,13 +99,13 @@ export default function page() {
     setphonenumbervalid("");
 
     console.log("Username entered:", email);
-    console.log("Username entered:", password);
+    console.log("Username entered:", voterid);
     console.log("Username entered:", dob);
-    console.log("Username entered:", phn_no);
+    console.log("Username entered:", location);
 
     try {
       const response = await fetch(
-        "http://192.168.68.146:8080/api/user/signup",
+        "http://192.168.68.121:8080/api/users/signup",
         {
           method: "POST",
           headers: {
@@ -102,11 +113,14 @@ export default function page() {
           },
 
           
-          body: JSON.stringify({
+            body: JSON.stringify({
             email: email,
-            password: password,
-            dob: dob,
-            phn_no: phn_no,
+            voterid: voterid,
+             dob: dob,
+            location: location,
+             roleId:2,
+             districtId:districtId,
+             createdby:"Admin"
           }),
         }
       );
@@ -114,9 +128,9 @@ export default function page() {
       const result = await response.text();
       alert(result);
       setemail("");
-      setPassword("");
+      setvoterid("");
       setdob("");
-      setphn_no("");
+      setlocation("");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -162,8 +176,8 @@ export default function page() {
                 id="password"
                 //   type="password"
                 className="form-control border-warning rounded-3 shaborderdow-sm form-control-sm"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={voterid}
+                onChange={(e) => setvoterid(e.target.value)}
               ></input>
             </div>
             <div className="mb-3">
@@ -199,14 +213,18 @@ export default function page() {
                 className="form-select  division"
                size="3"
                 aria-label="size 3 select example"
-                value={phn_no}
-                onChange={(e) => setphn_no(e.target.value)}
+                value={location}
+                 onChange={handleChange}
+                // onChange={(e) => setlocation(e.target.value)}
                 // style={{ overflowY: "scroll" }} // adds scroll bar
               >
                 <option value="">Select your Division</option>
+                {/* <p>{JSON.stringify(data)}</p> */}
+
                 {districts.map((item, index) => (
-                  <option key={index} value={item.districts}>
-                    {item.districts}
+                  <option key={index} value={item.name}>
+                    
+                    {item.name}
                   </option>
                 ))}
               </select>
