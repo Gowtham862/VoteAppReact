@@ -42,7 +42,7 @@ export default function Home() {
     if(email&&password==24)
     {
      
-    router.push('/Dahboard')
+    router.push('/Dashboard')
     }// want to navigate admin to see votes 
      else {
       setloader(false);

@@ -1,0 +1,55 @@
+.w-20{
+    width: 250px;
+     color: rgb(191,196,205)
+}
+.logo-text{
+    width: 210px;
+    height: 50px;
+}
+.logo{
+    width: 20px;
+   
+}
+.sidebback{
+    background-color: rgb(28, 137, 232);
+}
+.textbold:hover{
+  background-color: rgb(175, 173, 173);
+  /* background-color: rgb(242, 244, 245); */
+  /* color: black; */
+  /* background-color: transparent; */
+  /* width: max-content; */
+/* text-decoration: none; */
+ 
+  color:whitesmoke
+}
+body{
+    background-color: rgb(52,58,64);
+  
+}
+.textbold{
+    color: rgb(191,196,205)
+}
+.options{
+  
+     background-color: rgb(52,58,64)!important ;
+      color: rgb(191,196,205);
+    
+}
+#cars:focus{
+  box-shadow: none! important;
+  border: none !important;
+  outline: none !important;
+}
+.Car{
+    background-color: aliceblue;
+     box-shadow: none! important;
+  border: none !important;
+  outline: none !important;
+}
+select{
+    border: none;
+  outline: none;
+  background: transparent;
+  
+}

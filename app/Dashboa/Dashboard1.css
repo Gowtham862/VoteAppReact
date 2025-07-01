@@ -1,0 +1,11 @@
+.hlooo{
+    background-color: rgb(255,255,255);
+    height: 100vh;
+}
+.h-23{
+    height: 30px;
+   background-color: aliceblue;
+   display: flex;
+   justify-content: center;
+   font-size: large;
+}

@@ -1,0 +1,28 @@
+.hloo{
+    background-color: aliceblue;
+}
+.votedetails{
+    border: 1px solid wheat;
+    
+}
+.FUN{
+    display: flex;
+    justify-content: center;
+      gap: 20px;
+     align-items: start;
+     position: relative;
+     /* top: 60px; */
+ 
+}
+.votedparty{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top:10px;
+    
+   
+}
+.heighhh{
+    height: 180px;
+}

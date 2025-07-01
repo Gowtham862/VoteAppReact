@@ -4,16 +4,17 @@ import React, { useEffect, useState } from "react";
 
 import "./user.css";
 import { useRouter } from "next/navigation";
-
+import { FaEye } from "react-icons/fa";
 import { useSearchParams } from "next/navigation";
 export default function Home() {
+    
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
   const age = searchParams.get("age");
   const city = searchParams.get("city");
 
   const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [voterId, setvoterId] = useState("");
   const [errorm, seterrorm] = useState("");
   const [errorpass, seterrorpass] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -21,22 +22,32 @@ export default function Home() {
   const [sentdistrict, setsentdistrict] = useState("");
   const [candidates, setCandidates] = useState([]);
   const [token, setToken] = useState(null);
+  const[visible,setvisible]=useState(false);
+
+
+  
+    // const icon=<FaEye onclick={()=>setvisible(pre=>!pre)}  icon={visible?"eye-slash":"eyes"}/>
+
+    
+    // const inputype=visible?"text":"password";
+    // return[icon,inputype]; 
+  
   const user = useRouter();
   useEffect(() => {
-    const tok = localStorage.getItem("token");
-    console.log("welcome" + tok);
+    // const tok = localStorage.getItem("token");
+    // console.log("welcome" + tok);
     console.log("sucess abi");
     console.log(email);
     if (sentemail && sentdistrict) {
       console.log(sentdistrict);
       console.log("sucess gowtham");
-      fetch("http://192.168.68.121:8080/api/candidates/verify-and-get", {
-        method: "POST",
+      fetch("http://192.168.68.102:8080/candidates/by-district?districtName="+sentdistrict, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${tok}`,
+          // Authorization: `Bearer ${tok}`,
         },
-        body: JSON.stringify({ sentemail, sentdistrict }),
+        // body: JSON.stringify({ sentemail, sentdistrict }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -44,7 +55,7 @@ export default function Home() {
           console.log("sucees", data);
           setCandidates(data);
           localStorage.setItem("candidates", JSON.stringify(data));
-           localStorage.setItem("token",JSON.stringify(tok));
+          //  localStorage.setItem("token",JSON.stringify(tok));
           user.push(`/Votetable?email=${encodeURIComponent(sentemail)}`);
         })
         .catch((err) => console.error("Error in candidate API:", err));
@@ -69,17 +80,17 @@ export default function Home() {
     }
     try {
       const response = await fetch(
-        "http://192.168.68.121:8080/api/user/login",
+        "http://192.168.68.102:8080/api/users/login",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ email, voterId }),
         }
       );
       console.log("jwt");
-      console.log(response);
+      console.log("hlo"+response);
       const result = await response.json();
       console.log(result);
       if (!response.ok) {
@@ -88,16 +99,16 @@ export default function Home() {
       }
 
       console.log(result.email);
-      console.log("districr" + result.token);
+      // console.log("districr" + result.token);
       console.log(result.location);
-      setsentemail(result.email);
+      setsentemail(result.user_id);
       setsentdistrict(result.district);
-   const storedToken=    localStorage.setItem("token", result.token);
-   if (storedToken) {
-    setToken(storedToken);
-  }
+  //  const storedToken=    localStorage.setItem("token", result.token);
+  //  if (storedToken) {
+  //   setToken(storedToken);
+  // }
       setemail("");
-      setpassword("");
+      setvoterId("");
     } catch (error) {
       console.error("Error signing up:", error);
     }
@@ -133,12 +144,17 @@ export default function Home() {
             </label>
             {errorpass && <p className="error">{errorpass}</p>}
             <input
-              value={password}
+              value={voterId}
+               type={visible ? "password" : "text"}
               id="password"
-              type=""
-              onChange={(e) => setpassword(e.target.value)}
+              // type="password"
+              onChange={(e) => setvoterId(e.target.value)}
               className="form-control form-control-sm"
             />
+            {/* <i className="bi bi-eye"></i> */}
+             {/* <FaEye
+            onClick={() => setvisible((prev) => !prev)}
+            /> */}
           </div>
 
           <div className="mb-3">

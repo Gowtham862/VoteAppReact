@@ -1,0 +1,56 @@
+body{
+       height: 100vh;
+       
+}
+.h-2{
+    height: 30px;
+   background-color:    rgb(244,246,249);
+    color: aliceblue;
+    height: 50px;
+    display: flex;
+    align-items: center;
+   
+     position: relative;
+    
+}
+.logout{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    position: absolute;
+    top: 15px;
+    right:  0;
+   
+}
+
+
+
+.content-center{
+    position: relative;
+    top: 70px;
+}
+.contentheader{
+    background-color: rgb(255,255,255);
+   color:  #9c9d9e;
+}
+.contentheader:hover{
+color: #202021;
+}
+.border{
+   
+     box-shadow: rgb(0,0,0,0.16) 0px 1px 4px;
+     display: flex;
+     flex-direction: row;
+     position: relative;
+/* background-color: aliceblue; */
+     top: 50px;
+}
+.dis{
+    display: flex;
+   height: 200px;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+   
+    align-content: center;
+}

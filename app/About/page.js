@@ -13,7 +13,7 @@ export default function page() {
   }, []);
   const user = () => {
     console.log("gowtham get ready");
-    fetch("http://192.168.68.121:8080/district/all")
+    fetch("http://192.168.68.102:8080/district/all")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched data:", data);
@@ -60,10 +60,7 @@ export default function page() {
     const birthYear = new Date(dob).getFullYear();
     const now = new Date().getFullYear();
     const age = now - birthYear;
-    console.log(age);
-    {
-      console.log("Birth year:", birthYear);
-    }
+
     e.preventDefault();
     if (!email) {
       setemailvalid("email canot be null");
@@ -105,7 +102,7 @@ export default function page() {
 
     try {
       const response = await fetch(
-        "http://192.168.68.121:8080/api/users/signup",
+        "http://192.168.68.102:8080/api/users/signup",
         {
           method: "POST",
           headers: {
@@ -154,7 +151,7 @@ export default function page() {
                 Enter your Email  <span style={{ color: 'red' }}>*</span>
               </label>
               {emailvalid && (
-                <div className="form-text text-danger">{emailvalid} </div>
+                <div className="form-text text">{emailvalid} </div>
               )}
               <input
                 id="email"
@@ -170,7 +167,7 @@ export default function page() {
                 Create your Voteid  <span style={{ color: 'red' }}>*</span>
               </label>
               {passwordvalid && (
-                <div className="form-text text-danger">{passwordvalid} </div>
+                <div className="form-text text">{passwordvalid} </div>
               )}
               <input
                 id="password"
@@ -185,7 +182,7 @@ export default function page() {
                 Date of Birth  <span style={{ color: 'red' }}>*</span>
               </label>
               {dateofbirthvalid && (
-                <div className="form-text text-danger">{dateofbirthvalid}</div>
+                <div className="form-text text">{dateofbirthvalid}</div>
               )}
               <input
                 type="date"
@@ -199,7 +196,7 @@ export default function page() {
                 Enter The District <span style={{ color: 'red' }}>*</span>
               </label>
               {phonenumbervalid && (
-                <div className="form-text text-danger">{phonenumbervalid}</div>
+                <div className="form-text text">{phonenumbervalid}</div>
               )}
               {/* <input
                 id="phonenumber"
