@@ -1,28 +1,113 @@
-.hloo{
-    background-color: aliceblue;
+.hloo {
+  background-color: aliceblue;
+  transition: 0.5s all ease-in-out;
 }
-.votedetails{
-    border: 1px solid wheat;
+.votedetails {
+  border: 1px solid wheat;
+}
+.FUN {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: start;
+  position: relative;
+  top: 40px;
+}
+.votedparty {
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+  position: relative;
+  top: 70px;
+}
+.heighhh {
+  height: 180px;
+  align-content: center;
+   color: rgb(191,196,205)
+}
+.dashboar {
+  transition: 0.5s all ease-in-out;
+}
+.h-23 {
+     background-color:    rgb(244,246,249);
+    color: aliceblue;
+}
+.heightfor{
+    height: 88vh;
+}
+.votedpartyheader{
+    height: 30px;
+    background-color: rgb(255,255,255);
+}
+.ml-1{
+    border-radius: 30px;
+
+}
+.rounded{
+    border-radius: 6px;
+}
+
+
+.viewportheight{
+    height: 100vh;
+}
+.dashboar{
+    transition: all 0.5s ease;
     
 }
-.FUN{
-    display: flex;
-    justify-content: center;
-      gap: 20px;
-     align-items: start;
-     position: relative;
-     /* top: 60px; */
- 
+
+
+/* .sidebar-container {
+  width: 250px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  will-change: transform, opacity;
 }
-.votedparty{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-    top:10px;
-    
-   
+
+.sidebar-container.hide {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
-.heighhh{
-    height: 180px;
+
+.sidebar-container.show {
+  transform: translateX(0);
+  opacity: 1;
+} */
+/* Flex layout */
+.main-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+.sidebar {
+  overflow: hidden;
+  transition: width 0.3s ease;
+  
+}
+
+.sidebar-show {
+  width: 250px; 
+}
+
+.sidebar-hide {
+  width: 40px;
+}
+
+
+.content {
+  transition: width 0.3s ease;
+  padding: 20px;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.content-shrink {
+  width: calc(100% - 250px);
+}
+
+.content-full {
+  width: 100%;
 }

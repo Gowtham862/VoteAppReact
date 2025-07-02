@@ -9,14 +9,18 @@ export default function Dashboard() {
 
   return (
     <div>
-      <div className="d-flex  vh-100">
-        {showSidebar && (
-          <div className="  sidebarback">
+      <div className="main-layout d-flex vh-100">
+        {/* {showSidebar && (
+          <div className={`sidebar transition-all ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
             <Sidebar />
           </div>
-        )}
-        <div className="w-100  bg-body-secondary ">
-          <Content toggleSidebar={() => setShowSidebar((prev) => !prev)} />
+        )} */}
+        <div className={`sidebar transition-all ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
+                <Sidebar />
+              </div>
+        <div className="w-100  ">
+          <Content className="wel" toggleSidebar={() => setShowSidebar((prev) => !prev)} />
+           
         </div>
       </div>
     </div>

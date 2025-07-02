@@ -31,10 +31,10 @@ body{
 }
 .contentheader{
     background-color: rgb(255,255,255);
-   color:  #9c9d9e;
+   color: black
 }
-.contentheader:hover{
-color: #202021;
+.contentheader{
+color: #1d1d1e;
 }
 .border{
    
@@ -47,10 +47,41 @@ color: #202021;
 }
 .dis{
     display: flex;
-   height: 200px;
+   height: 160px;
     gap: 40px;
     justify-content: center;
     align-items: center;
    
     align-content: center;
+}
+.logo:hover{
+    transition: 5s;
+}
+.Total-Votes{
+    background-color: rgb(23,162,184);
+}
+.Total-users{
+    background-color: rgb(255,193,7);
+}
+.registeration{
+    background-color: rgb(220,53,69);
+}
+.Totalimagelogo{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.contentin-dashboard{
+    display: flex;
+    gap: 20px;
+    height: 200px;
+    
+    /* justify-content: center; */
+}
+.usersmargin{
+    color:#ffff;
+    font-size: larger;
+    position: relative;
+    top: 70px;
+    right: 80px;
 }
