@@ -4,4 +4,16 @@
 }
 .bgwhite{
     background-color: rgb(236, 241, 246);
+   
+}
+.success{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.kalai{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
 }

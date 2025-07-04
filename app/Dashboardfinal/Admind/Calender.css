@@ -1,0 +1,10 @@
+.calci{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.heading-event{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

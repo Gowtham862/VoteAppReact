@@ -18,8 +18,8 @@ const data = [
 const Chartorigin = () => {
   return (
     <div className=" bgwhite rounded-xl w-full h-full p-4">
-      <div className="flex justify-between items-center mb-4">
-        <h4>Election</h4>
+      <div className="success mb-4">
+        <h6 className="text-lg font-semibold'">Top Votes</h6>
         <Image width={20} height={20} src="/image.png" alt="search" />
       </div>
 
@@ -44,7 +44,7 @@ const Chartorigin = () => {
         
         
       </div>
-      <div className="flex justify-center gap-20">
+      <div className="kalai">
           <div className="flex flex-col gap-1">
             <div className="w-6 h-6  bg rounded-full">
               <h6>124</h6>
