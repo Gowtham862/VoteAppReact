@@ -26,21 +26,10 @@
 }
 
 .sidebar-hide {
-  width: 40px;
+  width: 45px;
 }
 
-.content {
-  transition: width 0.3s ease;
-  padding: 20px;
-  overflow: auto;
-  flex-grow: 1;
-}
-.content-shrink {
-  width: calc(100% - 250px);
-}
-.content-full {
-  width: 100%;
-}
+
 table,
 td,
 th {
@@ -48,11 +37,10 @@ th {
 }
 
 .centertable {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  top: 20px;
+  /* display: flex; */
+   /* justify-content: center; */
+ text-align: center; 
+ 
 }
 .tableinput{
     border: none;
@@ -60,4 +48,9 @@ th {
 }
 .tableinput:hover{
    border: 3px solid bisque; 
+}
+.previous{
+  display: flex;
+  justify-content: end;
+  
 }

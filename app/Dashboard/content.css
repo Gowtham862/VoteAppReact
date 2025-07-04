@@ -1,87 +1,82 @@
-body{
-       height: 100vh;
-       
+body {
+  height: 100vh;
 }
-.h-2{
-    height: 30px;
-   background-color:    rgb(244,246,249);
-    color: aliceblue;
-    height: 50px;
-    display: flex;
-    align-items: center;
-   
-     position: relative;
-    
+.h-2 {
+  height: 30px;
+  background-color: rgb(244, 246, 249);
+  color: aliceblue;
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  position: relative;
 }
-.logout{
-    display: flex;
-    justify-content: end;
-    gap: 20px;
-    position: absolute;
-    top: 15px;
-    right:  0;
-   
+.logout {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  position: absolute;
+  top: 15px;
+  right: 0;
 }
 
+.content-center {
+  position: relative;
+  top: 70px;
+}
+.contentheader {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+.contentheader {
+  color: #1d1d1e;
+}
+.border {
+  box-shadow: rgb(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* background-color: aliceblue; */
+  top: 50px;
+}
+.dis {
+  display: flex;
+  height: 160px;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
 
+  align-content: center;
+}
+.logo:hover {
+  transition: 5s;
+}
 
-.content-center{
-    position: relative;
-    top: 70px;
+.Totalimagelogo {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
 }
-.contentheader{
-    background-color: rgb(255,255,255);
-   color: black
+.contentin-dashboard {
+  display: flex;
+  gap: 20px;
+  height: 180px;
+  /* flex-wrap: wrap; */
+  flex-grow: 1;
+  justify-content: center;
+  /* position: absolute; */
 }
-.contentheader{
-color: #1d1d1e;
+.usersmargin {
+  color: #ffff;
+  font-size: larger;
+  position: relative;
+  top: 70px;
+  right: 80px;
 }
-.border{
-   
-     box-shadow: rgb(0,0,0,0.16) 0px 1px 4px;
-     display: flex;
-     flex-direction: row;
-     position: relative;
-/* background-color: aliceblue; */
-     top: 50px;
-}
-.dis{
-    display: flex;
-   height: 160px;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-   
-    align-content: center;
-}
-.logo:hover{
-    transition: 5s;
-}
-.Total-Votes{
-    background-color: rgb(23,162,184);
-}
-.Total-users{
-    background-color: rgb(255,193,7);
-}
-.registeration{
-    background-color: rgb(220,53,69);
-}
-.Totalimagelogo{
+/* .bor{
     border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-}
-.contentin-dashboard{
-    display: flex;
-    gap: 20px;
-    height: 200px;
-    
-    /* justify-content: center; */
-}
-.usersmargin{
-    color:#ffff;
-    font-size: larger;
-    position: relative;
-    top: 70px;
-    right: 80px;
-}
+    height: 80px;
+    width: 80px;
+    margin-top: 80px;
+    border-radius: 90px;
+} */

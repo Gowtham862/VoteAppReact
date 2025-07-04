@@ -1,6 +1,7 @@
 .hloo {
   background-color: aliceblue;
-  transition: 0.5s all ease-in-out;
+  /* height: 600px; */
+  /* transition: 0.5s all ease-in-out; */
 }
 .votedetails {
   border: 1px solid wheat;
@@ -93,7 +94,7 @@
 }
 
 .sidebar-hide {
-  width: 40px;
+  width: 50px;
 }
 
 

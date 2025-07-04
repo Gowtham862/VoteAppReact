@@ -15,10 +15,11 @@ export default function Dashboard() {
             <Sidebar />
           </div>
         )} */}
-        <div className={`sidebar transition-all ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
-                <Sidebar />
+        <div className={` sidebar transition-all ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
+                <Sidebar className='' />
+                
               </div>
-        <div className="w-100  ">
+        <div className=" ">
           <Content className="wel" toggleSidebar={() => setShowSidebar((prev) => !prev)} />
            
         </div>

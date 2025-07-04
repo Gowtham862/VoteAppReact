@@ -20,17 +20,20 @@ export default function Content({ toggleSidebar}) {
    
     <div className="contentin-dashboard">
         
-         <div className="border Total-Votes rounded w-25">
-        <h1 className="m-3 text-white ">66</h1>
-        <p  className="m-4 usersmargin">Total Votes</p>
+         <div className="border bg-white Total-Votes rounded w-25">
+        <h1 className="m-5 text-dark ">66</h1>
+        <p  className="">Total Votes</p>
+        <span></span>
+          <div className="bor"></div>
         </div>
-        <div className="border rounded Total-users w-25">
-        <h1 className="m-3 text-white ">150</h1>
-        <p  className="m-4 usersmargin">  <FaUserShield  size={20}/>Total users</p>
+        <div className="border bg-white rounded Total-users w-25">
+        <h1 className="m-5 text-dark ">150</h1>
+        <p  className="">  <FaUserShield className="" size={20}/>Total users</p>
         </div>
-         <div className="border w-25 rounded registeration">
-        <h1 className="m-3 text-white  ">15</h1>
-        <p  className="m-3 usersmargin  "> <FaRegistered size={20} />Registerations</p>
+         
+         <div className="border w-25 bg-white rounded registeration">
+        <h1 className="m-5 text-dark ">15</h1>
+        <p  className="  "> <FaRegistered size={20} />Registerations</p>
         {/* <p className="mt-5 ">moreinfo</p> */}
         </div>
         

@@ -1,0 +1,124 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "gowtham",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "gowthamk@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 2,
+      "name": "kalai",
+      "voterid": "123467",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "kalai@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 3,
+      "name": "vasanth",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "vasanth@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 4,
+      "name": "rahul",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "rahul@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 5,
+      "name": "faredth",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "faredth@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 6,
+      "name": "kumrar",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "kumrar@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 7,
+      "name": "siva",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "siva@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 8,
+      "name": "raja",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "raja@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 9,
+      "name": "krishan",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "krishan@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 10,
+      "name": "arun",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "arun@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 11,
+      "name": "dinesh",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "dinesh@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 12,
+      "name": "suresh",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "suresh@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 13,
+      "name": "mohan",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "mohan@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 14,
+      "name": "vignesh",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "vignesh@gmail.com",
+      "userdistrict": "palani"
+    },
+    {
+      "id": 15,
+      "name": "naveen",
+      "voterid": "1234",
+      "userdateofbirth": "12-04-1993",
+      "useremail": "naveen@gmail.com",
+      "userdistrict": "palani"
+    }
+  ]
+}

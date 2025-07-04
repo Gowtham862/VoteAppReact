@@ -17,7 +17,7 @@ export default function page() {
        <div className={`sidebar transition-all position-sticky ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
               <Sidebar />
             </div>
-            <div className="vw-100 vh-100  hlooo ">
+            <div className=" w-100  hlooo ">
              <Dashboard1 toggleSidebar={()=> setShowSidebar((prev)=>!prev)} /> 
              
               </div>
