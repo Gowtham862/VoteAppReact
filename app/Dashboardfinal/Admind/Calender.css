@@ -8,3 +8,21 @@
     justify-content: space-between;
     align-items: center;
 }
+.even_top{
+  border-top-color: #C3EBFA;
+  
+}
+.announcements{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.background-announcement{
+    background-color: #C3EBFA; ;
+}
+.background-second{
+    background-color: rgb(236, 236, 184);
+}
+.background-third{
+    background-color: rgb(147, 137, 137);
+}

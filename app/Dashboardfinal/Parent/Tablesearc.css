@@ -1,0 +1,14 @@
+.iconcolor{
+    background-color: yellow;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+.paginationbutton{
+    display: flex;
+    align-items: center;
+    gap: 2;
+}

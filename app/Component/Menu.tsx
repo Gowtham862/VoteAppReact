@@ -2,36 +2,43 @@ import Link from "next/link";
 import { HiHome } from "react-icons/hi";
 import React from "react";
 import Image from "next/image";
+import './Menu.css'
 
 const menuitems = [
   {
     tittle: "MENU",
     items: [
       {
-        icon: "/house-key.png",
+        icon: "/h.jpg",
         label: "home",
-        href: "/",
+        href: "/Dashboardfinal/Admind",
       },
       {
-        icon: "/account.png",
+        icon: "/user.png",
         label: "user",
-        href: "/",
+        href: "/Dashboardfinal/Parent",
       },
       {
         icon: "/account.png",
         label: "Voter",
-        href: "/",
+        href: "/Dashboardfinal/Votedetails",
       },
       {
         icon: "/account.png",
-        label: "Total",
+        label: "party details",
         href: "/",
       },
       {
-        icon: "/account.png",
-        label: "users",
+        icon: "/events.png",
+        label: "Events",
         href: "/",
       },
+       {
+        icon: "/a.png",
+        label: "Announcements",
+        href: "/",
+      },
+      
     ],
   },
   {
@@ -43,14 +50,14 @@ const menuitems = [
         href: "/profile",
       },
       {
-        icon: "/account.png",
+        icon: "/settings.png",
         label: "Setting",
         href: "/profile",
       },
       {
-        icon: "/account.png",
+        icon: "/logout.png",
         label: "Logout",
-        href: "/profile",
+        href: "/Admin",
       },
     ],
   },
@@ -60,17 +67,18 @@ export default function menu() {
     <div className="mt-4 text-sm ">
       {menuitems.map((menu) => (
         <div className="flex  flex-col gap-2" key={menu.tittle}>
-          <span className="hidden lg:block font-light">{menu.tittle}</span>
+          <span className="hidden lg:block menuother font-light">{menu.tittle}</span>
           {menu.items.map((item) => (
             <Link
-              className="text-decoration-none flex text-white  items-center  gap-4 py-2 "
+              className="text-decoration-none flex  hoverback  items-center  gap-4 py-2 px-3 rounded-md  "
               href={item.href}
               key={item.label}
             >
               {/* <Image src={item.icon} alt={item.label} width={20} height={20}/> */}
               {item.icon && (
                 <Image
-                  className=""
+                
+                  className="rounded icon"
                   src={item.icon}
                   alt={item.label}
                   width={20}

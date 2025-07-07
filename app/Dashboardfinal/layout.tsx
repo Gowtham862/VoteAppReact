@@ -29,11 +29,11 @@ export default function Dashboardlayout({
   children: React.ReactNode;
 }>) {
   return (
-   <div className="h-screen flex">
-    <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] bg-secondary ">
- <Link href='/' className="flex items-center text-decoration-none justify-center lg:justify-start p-4 gap-2" >
-        {/* <GrUserAdmin /> */}Admin
-        {/* <span className="">Admipage </span> */}
+    <div className="h-screen flex">
+    <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%]" style={{backgroundColor:" rgb(52, 58, 64)"}}>
+ <Link href='/ ' className="flex items-center text-decoration-none justify-center  lg:justify-start p-4 gap-2" >
+        {/* <GrUserAdmin /> */}
+        <span className="text-gray-400  font-bold">Admin </span>
      </Link>
    <Menu/>
     
