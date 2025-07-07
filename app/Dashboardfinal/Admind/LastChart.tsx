@@ -19,18 +19,18 @@ import {
   Rectangle,
 } from "recharts";
 const data = [
-  { name: "Jan", income: 100, expense:  240},
-  { name: "Feb", income: 200, expense: 500 },
-  { name: "mar", income: 300,  expense: 600 },
-  { name: "April",income: 400, expense: 400 },
-  { name: "May", income: 500,   expense: 500 },
-     { name: "june",income: 100,  expense: 500 },
-      { name: "july",income: 100,  expense: 100 },
-       { name: "aug",income: 300,  expense: 100 },
-        { name: "sep",income: 100,  expense: 200 },
-       { name: "oct",income: 600,  expense: 300 },
-        { name: "nov",income: 500,  expense: 400 },
-       { name: "dec",income: 400,  expense: 300 },
+  { name: "Jan", voted: 100, Registered:  240},
+  { name: "Feb", voted: 200, Registered: 500 },
+  { name: "mar", voted: 300,  Registered: 600 },
+  { name: "April",voted: 400, Registered: 400 },
+  { name: "May",voted: 500,   Registered: 500 },
+     { name: "june",voted: 100,  Registered: 500 },
+      { name: "july",voted: 100,  Registered: 100 },
+       { name: "aug",voted: 300,  Registered: 100 },
+        { name: "sep",voted: 100,  Registered: 200 },
+       { name: "oct",voted: 600,  Registered: 300 },
+        { name: "nov",voted: 500,  Registered: 400 },
+       { name: "dec",voted: 400,  Registered: 300 },
 ];
 
 const LastChart = () => {
@@ -59,13 +59,13 @@ const LastChart = () => {
           <Legend  align='left'className='' verticalAlign='top' wrapperStyle={{paddingTop:"10px",paddingBottom:"30px"}}/>
           <Line
           type="monotone"
-          dataKey="income"
+          dataKey="voted"
           stroke="#8884d8"
         //   activeDot={{r:8}}
           strokeWidth={5}
           
           />
-          <Line type="monotone" dataKey="expense" stroke="#CFCEFF"  strokeWidth={5} />
+          <Line type="monotone" dataKey="Registered" stroke="#CFCEFF"  strokeWidth={5} />
         </LineChart>
       </ResponsiveContainer>
     </div>

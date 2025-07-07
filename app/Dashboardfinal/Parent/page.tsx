@@ -5,6 +5,7 @@ import Image from "next/image";
 import Tablesearch from "./Tablesearch";
 import Pagination from "./Pagination";
 import UserTable from "./UserTable";
+import Deleted from '../../Dashboardfinal/Admind/Deleted'
 
 import "../../Dashboardfinal/Parent/Tablesearc.css";
 import Link from "next/link";
@@ -133,7 +134,9 @@ export default function page() {
           <Link href="">
             <button className="w-7 h-7 flex items-center justify-center rounded-full">
               <Image src="/delete.jpg" alt="" width={20} height={20} />
+
             </button>
+                           {/* <Deleted table='user' type='delete'/> */}
           </Link>
         </div>
       </td>
@@ -147,15 +150,19 @@ export default function page() {
         <div className="flex flex-col md:flex-row items-center gap-4  w-full md:w-auto">
           <Tablesearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8   iconcolor  ">
+            {/* <button className="w-8 h-8   iconcolor  ">
               <Image src="/shared image.png" alt="" height={14} width={14} />
-            </button>
-            <button className="iconcolor ">
+            </button> */}
+
+            {/* <button className="w-8 h-8 iconcolor ">
               <Image src="/filter.png" alt="" height={14} width={14} />
-            </button>
-            <button className="iconcolor ">
+            </button> */}
+            {/* <button className="iconcolor ">
               <Image src="/add.png" alt="" height={14} width={14} />
-            </button>
+            </button> */}
+            <Deleted table="user" type="shared image"/>
+            <Deleted table='user' type='filter'/>
+            <Deleted table="user" type="add"/>
           </div>
         </div>
       </div>

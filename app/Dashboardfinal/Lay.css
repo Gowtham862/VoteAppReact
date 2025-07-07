@@ -1,0 +1,18 @@
+.sidebar {
+  overflow: hidden;
+  transition: width 0.3s ease;
+  
+}
+
+
+.sidebar-show {
+  width: 250px; 
+}
+
+.sidebar-hide {
+  width: 20%;
+}
+.iconhover-color:hover{
+    background-color: blue;
+
+}

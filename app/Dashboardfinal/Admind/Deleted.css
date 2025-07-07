@@ -1,0 +1,25 @@
+
+    .iconcolor{
+    background-color: yellow;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+.opa{
+    opacity: 70;
+}
+.close-button{
+   font-size: 30px;
+}
+.close-button:hover{
+
+   font-size: 30px;
+      transform: rotate(360deg);
+    transition: 1s;
+   /* transform: rotate(360deg);
+   transition: 1s; */
+
+}

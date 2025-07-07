@@ -26,7 +26,7 @@ const menuitems = [
       {
         icon: "/account.png",
         label: "party details",
-        href: "/",
+        href: "/Dashboardfinal/Partydetails",
       },
       {
         icon: "/events.png",
@@ -65,6 +65,7 @@ const menuitems = [
 export default function menu() {
   return (
     <div className="mt-4 text-sm ">
+      
       {menuitems.map((menu) => (
         <div className="flex  flex-col gap-2" key={menu.tittle}>
           <span className="hidden lg:block menuother font-light">{menu.tittle}</span>

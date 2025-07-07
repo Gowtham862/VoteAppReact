@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import '../../Dashboardfinal/Admind/Chart.css'
 const Chart = ({ type ,value}: { type: string;value:number }) => {
+  const date=new Date();
+  
   return <div className='rounded-2xl bg gb min-w-[130px]  p-4 flex-1 '>
 <div className='flex justify-between items-center'>
 

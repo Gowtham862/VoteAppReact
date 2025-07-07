@@ -1,0 +1,7 @@
+.iconcolor:hover{
+    background-color: #7bafe3;
+    color: aliceblue;
+    transform: rotate(360deg);
+    transition: 1s;
+}
+

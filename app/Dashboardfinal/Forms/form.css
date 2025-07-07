@@ -1,0 +1,19 @@
+.out{
+    outline: none;
+    box-shadow: 0 0 0 1.5px #d8dee9;
+}
+.learn-font{
+  font-size:  0.75rem;
+  color: rgb(179, 179, 179);
+}
+.content-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4;
+}
+.form-content{
+    display: flex;
+    flex-direction: column;
+    gap: 5;
+}

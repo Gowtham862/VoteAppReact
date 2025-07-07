@@ -5,7 +5,6 @@ import Image from "next/image";
 import Tablesearch from "../Parent/Tablesearch";
 import Pagination from "../Parent/Pagination";
 import UserTable from "../Parent/UserTable";
-import '../../Dashboardfinal/Votedetails/Votdetails.css'
 
 import "../../Dashboardfinal/Parent/Tablesearc.css";
 import Link from "next/link";
@@ -70,7 +69,7 @@ const columns = [
     className:"hidden md:table-cell",
   },
    {
-    header: "Uservoterid",
+    header: "PartyName",
     accessor:"Uservoterid",
     className:"hidden md:table-cell",
   },
@@ -125,7 +124,7 @@ export default function page() {
           <Tablesearch />
           <div className="flex items-center gap-4 self-end">
             <button className="w-8 h-8   iconcolor  ">
-              <Image src="/shared image.png"  className="" alt="" height={14} width={14} />
+              <Image src="/shared image.png" alt="" height={14} width={14} />
             </button>
             <button className="iconcolor ">
               <Image src="/filter.png" alt="" height={14} width={14} />
