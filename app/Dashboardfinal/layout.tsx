@@ -10,6 +10,7 @@ import './Lay.css'
 import { GrUserAdmin } from "react-icons/gr";
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Geist, Geist_Mono } from "next/font/google";
+import './Lay.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,11 +40,12 @@ export default function Dashboardlayout({
 {
   const [showSidebar, setShowSidebar] = useState(true);
   return (
+    // style={{backgroundColor:" rgb(52, 58, 64)"}}
     <div className="h-screen flex">
-    <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%]" style={{backgroundColor:" rgb(52, 58, 64)"}}>
- <Link href='/ ' className="flex items-center text-decoration-none justify-center  lg:justify-start p-4 gap-2" >
-        {/* <GrUserAdmin /> */}
-        <span className="text-gray-400  font-bold">Admin </span>
+    <div className="gow md:w-[8%] lg:w-[16%] xl:w-[14%] "   >
+ <Link href='/' className="flex items-center text-decoration-none justify-center  lg:justify-start p-4 gap-2" >
+        <GrUserAdmin style={{color:"white"}} size={20} />
+        <span className="text-gray-400 change-cur font-bold">Admin </span>
      </Link>
    <div className={` sidebar transition-all ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
    <Menu/>
@@ -52,7 +54,7 @@ export default function Dashboardlayout({
     
     </div>
     {/* gowtham */}
-     <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%]  overflow-scroll">
+     <div className=" width-left md:w-[92%] lg:w-[84%] xl:w-[86%]  overflow-scroll">
 
 <Navbar/>
      {children}

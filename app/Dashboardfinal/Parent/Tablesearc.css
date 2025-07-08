@@ -12,3 +12,24 @@
     align-items: center;
     gap: 2;
 }
+.input-edits {
+width: 300px;
+background-color: transparent;
+}
+.input-edits:focus {
+    outline: none;
+    
+}
+.top-div-input{
+    border: 1px solid rgb(226, 218, 218);
+    border-radius: 15px;
+    font-size: 13px;
+}
+.hide-table{
+display: none;
+}
+@media screen and (min-width:768) {
+    .hide-table{
+        display: table-cell;
+    }
+}

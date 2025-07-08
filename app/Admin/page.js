@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { Ripple } from "react-css-spinners";
 import { useRef, useState } from "react";
 import "./Admin.css"
+import TextField from '@mui/material/TextField';
 export default function Home() {
   const [email,setemail]=useState("");
   const [password,setpassword]=useState("");
@@ -35,8 +36,8 @@ export default function Home() {
   {
     setpasseror("Password cannot be null");
   }
-  setemail("");
-  setpassword("");
+  // setemail("");
+  // setpassword("");
    setloader(true);
   setTimeout(()=>{
     if(email&&password==24)
@@ -48,8 +49,10 @@ export default function Home() {
       setloader(false);
       alert('Enter valid name or password!');
   }
+  
  }
 ),3000}
+ 
   return (
     
    <div className="bimage">
@@ -59,13 +62,15 @@ export default function Home() {
       <div className="mb-0">
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
       { emailerr&& <p className="adminerror">{emailerr}</p>}
-        <input value={email}  onChange={(e) => setemail(e.target.value)} className="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+       {/* <input value={email}  onChange={(e) => setemail(e.target.value)} className="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"/> */}
+        <TextField  size="small" value={email} label='email' onChange={(e) => setemail(e.target.value)} className="form-control textfiels-new form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" />
         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
       </div>
       <div className="mb-2 ">
         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
         {passeror&&<p className="adminerror">{passeror}</p>}
-        <input type="password" value={password} ref={inputfocus}  onChange={(e) => setpassword(e.target.value)} className="form-control form-control-sm" id="exampleInputPassword1"/>
+        {/* <input type="password" value={password} ref={inputfocus}  onChange={(e) => setpassword(e.target.value)} className="form-control form-control-sm" id="exampleInputPassword1"/> */}
+        <TextField label='password' size="small" type="password" value={password} ref={inputfocus}  onChange={(e) => setpassword(e.target.value)} className="form-control form-control-sm" id="exampleInputPassword1"/>
       </div>
       <div className="mb-3 form-check">
         <input type="checkbox" className="form-check-input" id="exampleCheck1"/>

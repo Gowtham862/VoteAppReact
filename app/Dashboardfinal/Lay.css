@@ -16,3 +16,21 @@
     background-color: blue;
 
 }
+.gow{
+  background-color:  rgb(52, 58, 64);
+  width: 14%;
+  
+}
+.change-cur{
+  cursor: pointer;
+}
+@media screen and (max-width:768px){
+  .gow{
+     background-color:  rgb(52, 58, 64);
+        /* width: 8%; */
+  }
+  
+}
+.width-left{
+  width: 86%;
+}

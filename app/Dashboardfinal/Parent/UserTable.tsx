@@ -73,7 +73,7 @@ const UserTable=({ columns,renderRow,data
        data:any[];
 })=> {
     return (
-        <table className='w-full   mt-4'>
+        <table className='w-full  mt-4'>
            <thead>
             <tr className='text-left  text-sm  text-gray-500'>
                 {columns.map((colu)=>(

@@ -18,5 +18,44 @@
     background-color: aqua;
 }
 .menuother{
+    margin-left: 5px;
     color: #fcfcfc;
+    position: relative;
+    border: 2px solid rgb(219, 206, 206);
+    border-top:none ;
+    border-left:none ;
+    border-right:none ;
+    width:70%;
+    top: 2px;
+    left: 0;
+}
+.list-top{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+@media screen and (max-width:1000px){
+    .menuother{
+        display: none;
+    }
+
+    
+}
+.admin-left{
+    display: flex;
+    justify-content: space-between;
+}
+.input-edit{
+    background-color: transparent;
+     width: 300px;
+}
+.input-edit:focus{
+    outline: none;
+   
+}
+.nav-left{
+    cursor: pointer;
+}
+.top-div-input{
+    
 }

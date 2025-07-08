@@ -10,12 +10,12 @@ const menuitems = [
     items: [
       {
         icon: "/h.jpg",
-        label: "home",
+        label: "Home",
         href: "/Dashboardfinal/Admind",
       },
       {
         icon: "/user.png",
-        label: "user",
+        label: "User",
         href: "/Dashboardfinal/Parent",
       },
       {
@@ -25,7 +25,7 @@ const menuitems = [
       },
       {
         icon: "/account.png",
-        label: "party details",
+        label: "Party details",
         href: "/Dashboardfinal/Partydetails",
       },
       {
@@ -67,8 +67,8 @@ export default function menu() {
     <div className="mt-4 text-sm ">
       
       {menuitems.map((menu) => (
-        <div className="flex  flex-col gap-2" key={menu.tittle}>
-          <span className="hidden lg:block menuother font-light">{menu.tittle}</span>
+        <div className=" list-top" key={menu.tittle}>
+          <span className=" menuother font-light">{menu.tittle}</span>
           {menu.items.map((item) => (
             <Link
               className="text-decoration-none flex  hoverback  items-center  gap-4 py-2 px-3 rounded-md  "

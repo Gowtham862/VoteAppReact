@@ -21,63 +21,47 @@ const userdata=[{
     id:"1",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Chennai"
 }
 ,{
     id:"2",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Coimbatore"},
     {
     id:"3",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Thirunelveli"},
     {
     id:"4",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Coimbatore"},
     {
     id:"5",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Coimbatore"},
     
      {
     id:"6",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Coimbatore"},
      {
     id:"7",
     userEmail:"gowthamk712812@gmail.com",
     UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
+    UserDoB:"12-09-2024",
     UserDistrict:"Coimbatore"},
-     {
-    id:"8",
-    userEmail:"gowthamk712812@gmail.com",
-    UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
-    UserDistrict:"kanchipuram"},
-    {
-    id:"9",
-    userEmail:"gowthamk712812@gmail.com",
-    UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
-    UserDistrict:"pollachi"},
-    {id:"10",
-    userEmail:"gowthamk712812@gmail.com",
-    UserVoterId:"TN@123",
-    UserDoB:"12=09-2024",
-    UserDistrict:"Thirupur"},
+    
     
     
 
@@ -119,15 +103,15 @@ export default function page() {
     <tr className="border-b border-gray-200 even:bg-slate-50 text-sm " key={item.id}>
       <td className=" p-2 flex items-center gap-4">
         <div className="flex flex-col">
-          <h6 className=" object-cover font-semibold">gowtham</h6>
+          <h6 className=" object-cover font-semibold">usernames</h6>
         </div>
       </td>
       {/* {item.voterid} */}
-      <td className="hidden md:table-cell">3</td>
+      <td className=" hide-table">{item.id}</td>
       {/* {item.dob} */}
-      <td className="hidden md:table-cell">tn123</td>
+      <td className=" hide-table">{item.UserVoterId}</td>
       {/* {item.district} */}
-      <td className="hidden md:table-cell">04-09-2025</td>
+      <td className=" hide-table">{item.UserDoB}</td>
       <td>thirunelveli</td>
       <td>
         <div className="flex items-center gap-2">

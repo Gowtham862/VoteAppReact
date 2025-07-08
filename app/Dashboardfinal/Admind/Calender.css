@@ -9,8 +9,7 @@
     align-items: center;
 }
 .even_top{
-  border-top-color: #C3EBFA;
-  
+  border-top-color: #C3EBFA; 
 }
 .announcements{
     display: flex;
@@ -21,8 +20,8 @@
     background-color: #C3EBFA; ;
 }
 .background-second{
-    background-color: rgb(236, 236, 184);
+    background-color: rgb(243, 243, 192);
 }
 .background-third{
-    background-color: rgb(147, 137, 137);
+    background-color: rgb(242, 235, 235);
 }

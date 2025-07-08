@@ -52,7 +52,7 @@ const LastChart = () => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
+          <CartesianGrid strokeDasharray="3 4" stroke="#ddd" />
           <XAxis tickMargin={10} axisLine={false} dataKey="name" tick={{fill:"#d1d5db"}}  />
           <YAxis tickMargin={10} axisLine={false} />
           <Tooltip contentStyle={{borderRadius:"10px",borderColor:"lightgray"}} />
