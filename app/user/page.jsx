@@ -41,7 +41,7 @@ export default function Home() {
     if (sentemail && sentdistrict) {
       console.log(sentdistrict);
       console.log("sucess gowtham");
-      fetch("http://192.168.68.102:8080/candidates/by-district?districtName="+sentdistrict, {
+      fetch("http://localhost:8080/candidates/by-district?districtName="+sentdistrict, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -80,7 +80,8 @@ export default function Home() {
     }
     try {
       const response = await fetch(
-        "http://192.168.68.102:8080/api/users/login",
+        // "http://localhost:8080/api/users/login",
+        "http://192.168.68.106:5000/api/users/loginuser",
         {
           method: "POST",
           headers: {

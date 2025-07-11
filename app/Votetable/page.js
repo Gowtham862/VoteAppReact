@@ -40,7 +40,7 @@ export default function Page() {
       console.log(partyId)
       // console.log("notcomplede" + validtoken);
       const response = await fetch(
-        "http://192.168.68.102:8080/api/voting/cast",
+        "http://localhost:8080/api/voting/cast",
         {
           method: "POST",
           headers: {

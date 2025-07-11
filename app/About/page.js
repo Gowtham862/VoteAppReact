@@ -13,9 +13,11 @@ export default function page() {
   }, []);
   const user = () => {
     console.log("gowtham get ready");
-    fetch("http://192.168.68.102:8080/district/all")
+    // fetch("http://localhost:8080/district/all")
+      fetch("http://192.168.68.106:5000/api/districts")
       .then((res) => res.json())
       .then((data) => {
+        // console.log(res);
         console.log("Fetched data:", data);
         console.log("Array length:", data.length);
         const l=data.length;
@@ -102,7 +104,9 @@ export default function page() {
 
     try {
       const response = await fetch(
-        "http://192.168.68.102:8080/api/users/signup",
+        "http://localhost:8080/api/users/signup",
+        //node js
+        //"http://192.168.68.106:5000/api/users",
         {
           method: "POST",
           headers: {
@@ -123,7 +127,8 @@ export default function page() {
       );
       console.log("ggg");
       const result = await response.text();
-      alert(result);
+      // alert(result);
+      alert("sucess");
       setemail("");
       setvoterid("");
       setdob("");

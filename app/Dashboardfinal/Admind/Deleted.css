@@ -23,3 +23,19 @@
    transition: 1s; */
 
 }
+.contents{
+   display: flex;
+   justify-content: center;
+}
+.buttons-delete{
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+.buttons-arrange{
+   background-color: red;
+   color: aliceblue;
+   padding: 9px;
+   width: 100px;
+   border-radius: 3px;
+}

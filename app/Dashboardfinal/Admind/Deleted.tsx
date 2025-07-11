@@ -18,15 +18,25 @@ const Deleted = ({ table, type, data, id }: DeletedProps) => {
       : type === "shared image"
       ? "w-8 h-8"
       : "w-7 h-7";
-  const back = type === "add" ? "bg:yellow" : "bg-blue";
+  const back = type === "add" ? "bg:yellow" : type=="filter"?"bg-yellow":type==="shared image"?"bg-yellow":"bg-white";
+ 
   const [open, setopen] = useState(false);
   const Form = () => {
-    return type === "delete" && id ? <form></form> : <Userform type="add" />;
+    return type === "delete"  ? <form>
+         <div className="d-flex contents">
+          <p className="text-ls">Are You Sure you want to delete the user</p>
+       
+         </div>
+         <div className="buttons-delete">
+          <button className="buttons-arrange border">delete</button>
+          <button onClick={() => setopen(false)} className="buttons-arrange" >Cancel</button>
+         </div>
+    </form> : <Userform type="add" />;
   };
   return (
     <div>
       <button
-        className={`${size} iconcolor flex items-center justify-center rounded-full  ${back}`}
+        className={`${size} iconcolor flex items-center justify-center rounded-full  ${back} `}
         onClick={() => setopen(true)}
       >
         <Image src={`/${type}.png`} alt={type} height={14} width={14} />
