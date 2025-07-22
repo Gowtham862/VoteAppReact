@@ -43,11 +43,11 @@ export default function Dashboardlayout({
     // style={{backgroundColor:" rgb(52, 58, 64)"}}
     <div className="h-screen flex">
     <div className="gow md:w-[8%] lg:w-[16%] xl:w-[14%] "   >
- <Link href='/' className="flex items-center text-decoration-none justify-center  lg:justify-start p-4 gap-2" >
+      <Link href='/' className="flex items-center text-decoration-none justify-center  lg:justify-start p-4 gap-2" >
         <GrUserAdmin style={{color:"white"}} size={20} />
-        <span className="text-gray-400 change-cur font-bold">Admin </span>
+        <span className="text-gray-400 change-cur font-bold">Admin</span>
      </Link>
-   <div className={` sidebar transition-all ${showSidebar ? 'sidebar-show' : 'sidebar-hide'}`}>
+   <div  className="">
    <Menu/>
    </div>
 

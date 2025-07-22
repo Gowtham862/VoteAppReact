@@ -13,8 +13,8 @@ export default function page() {
   }, []);
   const user = () => {
     console.log("gowtham get ready");
-    // fetch("http://localhost:8080/district/all")
-      fetch("http://192.168.68.106:5000/api/districts")
+    fetch("http://localhost:8080/district/all")
+      // fetch("http://192.168.68.106:5000/api/districts")
       .then((res) => res.json())
       .then((data) => {
         // console.log(res);

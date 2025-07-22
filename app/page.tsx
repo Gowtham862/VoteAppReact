@@ -19,7 +19,6 @@ export default function Home() {
         <div className="underline">Help</div>
         <div className="underline">Features</div>
       </div >
-     
        <div  className="ner">
         <div onClick={adminback} className=" pro  ">Admin</div>
         <div onClick={gotouser} className=" pro ">User</div>

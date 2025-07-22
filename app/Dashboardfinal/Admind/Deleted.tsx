@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Userform from "../Forms/userform";
 import Image from "next/image";
 import "./Deleted.css";
+import useFetch from "./Service/Fetchdata";
 type DeletedProps = {
   table: "user" | "voter" | "event";
-  type: "add" | "filter" | "shared image" | "delete";
+  type: "add" | "filter" | "shared image" | "delete" | "update";
   data?: any;
-  id?: number;
+  id?: string | number;
 };
 
 const Deleted = ({ table, type, data, id }: DeletedProps) => {
@@ -18,20 +19,65 @@ const Deleted = ({ table, type, data, id }: DeletedProps) => {
       : type === "shared image"
       ? "w-8 h-8"
       : "w-7 h-7";
-  const back = type === "add" ? "bg:yellow" : type=="filter"?"bg-yellow":type==="shared image"?"bg-yellow":"bg-white";
- 
+  const back =
+    type === "add"
+      ? "bg:yellow"
+      : type == "filter"
+      ? "bg-yellow"
+      : type === "shared image"
+      ? "bg-yellow"
+      : "bg-white";
+
   const [open, setopen] = useState(false);
+  const [dele, setdele] = useState(id);
+
+//    const[deleteData, datas, error, loading]=useFetch('http://localhost:8080/api/users/13/delete');
+// useEffect(()=>{
+//   deleteItem()
+// },[dele])
+  const deleteItem = async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/users/${dele}/delete`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        console.log(`Item with ID ${dele} deleted successfully.`);
+      } else {
+        console.error("Failed to delete item:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during deletion:", error);
+    }
+  };
   const Form = () => {
-    return type === "delete"  ? <form>
-         <div className="d-flex contents">
-          <p className="text-ls">Are You Sure you want to delete the user</p>
-       
-         </div>
-         <div className="buttons-delete">
-          <button className="buttons-arrange border">delete</button>
-          <button onClick={() => setopen(false)} className="buttons-arrange" >Cancel</button>
-         </div>
-    </form> : <Userform type="add" />;
+    return type === "delete" ? (
+      <form>
+        <div className="d-flex contents">
+          <p className="text-ls">Are you want to delete this id</p>
+        </div>
+        <div className="buttons-delete">
+          <button
+            onClick={() => setdele(id)}
+            className="buttons-arrange border"
+          >
+            delete
+          </button>
+          <button onClick={() => setopen(false)} className="buttons-arrange">
+            Cancel
+          </button>
+        </div>
+      </form>
+    ) : type === "update" ? (
+      <form>
+        <h1></h1>
+      </form>
+    ) : (
+      <Userform type="add" />
+    );
   };
   return (
     <div>
@@ -39,7 +85,7 @@ const Deleted = ({ table, type, data, id }: DeletedProps) => {
         className={`${size} iconcolor flex items-center justify-center rounded-full  ${back} `}
         onClick={() => setopen(true)}
       >
-        <Image src={`/${type}.png`} alt={type} height={14} width={14} />
+        <Image src={`/${type}.png`} alt={type} height={16} width={16} />
       </button>
       {open && (
         <div className="w-screen h-screen absolute left-0 top-0  opacity Z-50 flex items-center justify-center">
