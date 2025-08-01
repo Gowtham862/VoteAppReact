@@ -39,7 +39,16 @@ export default function page() {
   const [location, setlocation] = useState("");
   const [districtId, setdistrictId] = useState(null);
    
+  const changeformats = (e) => {
+    const value = e.target.value; // value = '2004-09-04'
+    setDob(value);
+  };
 
+  const formatDate = (isoDate) => {
+    if (!isoDate) return "";
+    const [year, month, day] = isoDate.split("-");
+    return `${day}-${month}-${year}`;
+  };
   const handleChange=(e)=>{
      const value = e.target.value;
      const indexInSelect = e.target.selectedIndex;
@@ -116,9 +125,9 @@ export default function page() {
           
             body: JSON.stringify({
             email: email,
-            voterid: voterid,
+             voterid: voterid,
              dob: dob,
-            location: location,
+             location: location,
              roleId:2,
              districtId:districtId,
              createdby:"Admin"
@@ -193,7 +202,9 @@ export default function page() {
                 type="date"
                 className="form-control form-control-sm border-warning rounded-3 shaborderdow-sm"
                 value={dob}
-                onChange={(e) => setdob(e.target.value)}
+                onChange={(e) => 
+                  setdob(e.target.value)}
+                // onChange={changeformats}
               ></input>
             </div>
             <div className="mb-3">
@@ -216,12 +227,10 @@ export default function page() {
                size="3"
                 aria-label="size 3 select example"
                 value={location}
-                 onChange={handleChange}
-                // onChange={(e) => setlocation(e.target.value)}
-                // style={{ overflowY: "scroll" }} // adds scroll bar
+                onChange={handleChange}
               >
                 <option value="">Select your Division</option>
-                {/* <p>{JSON.stringify(data)}</p> */}
+                
 
                 {districts.map((item, index) => (
                   <option key={index} value={item.name}>

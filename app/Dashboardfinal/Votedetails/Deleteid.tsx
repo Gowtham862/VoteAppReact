@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Userform from "../Forms/userform";
-import Upd from "../Forms/Upd";
+
 import Image from "next/image";
-import "./Deleted.css";
-import useFetch from "./Service/Fetchdata";
+import "../Admind/Deleted.css";
+
 import { toast } from "react-toastify";
+import Updateform from "./Updateformc";
 type DeletedProps = {
   table: "user" | "voter" | "event";
   type: "add" | "filter" | "shared image" | "delete" | "update";
   data?: any;
-  voterid?:any,
-  email?:any,
-  dob?:any,
-  location?:any,
   id?: string | number;
-   onDeleteSuccess?: () => void;
+   partyname?:any,
+   candidatename:string,
+   districtname:any,
+  onDeleteSuccess?: () => void;
 };
 
-const Deleted = ({ table, type,voterid, data, email,id ,dob ,location,onDeleteSuccess}: DeletedProps) => {
+const Deletedid = ({
+  table,
+  type,
+  data,
+  id,
+   partyname,
+   candidatename,
+   districtname,
+  onDeleteSuccess,
+}: DeletedProps) => {
   const size =
     type === "add"
       ? "w-8 h-8"
@@ -36,43 +45,43 @@ const Deleted = ({ table, type,voterid, data, email,id ,dob ,location,onDeleteSu
       : "bg-white";
 
   const [open, setopen] = useState(false);
-const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
   const [message, setmessage] = useState("");
-  const [voter,setvoter]=useState("");
-  const[emails,setemail]=useState("");
- const updatedata= async(e:any)=>{
- e.preventDefault();
-  console.log(voter);
-
- }
-  // useEffect(()=>{
-    
-  // },[voterid])
-
-   const close=(()=>{
-      setShow(false);
-    })
-  const deleteItem = async (e:any) => {
+  const [voter, setvoter] = useState("");
+  const [email, setemail] = useState("");
+  const updatedata = async (e: any) => {
     e.preventDefault();
-    
-    console.log("not sucess")
+    console.log(voter);
+  };
+
+  const close = () => {
+    setShow(false);
+  };
+  const deleteItem = async (e: any) => {
+    e.preventDefault();
+
+    console.log("not sucess");
     try {
-      const response = await fetch(`http://localhost:8080/api/users/${id}/delete`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `http://localhost:8080/candidates/${id}/deletecandi`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
-          toast("sucessfully deleted")
-          console.log(`Item with ID ${id} deleted successfully.`);
-          setmessage(`user Id ${id} deleted successfully`);
-          setopen(false) 
-           if (onDeleteSuccess) {
-          onDeleteSuccess(); 
-          }
-          
+        toast(`user id ${id} sucessfully deleted`);
+
+        console.log(`Item with ID ${id} deleted successfully.`);
+
+        setmessage(`user Id ${id} deleted successfully`);
+        setopen(false);
+        if (onDeleteSuccess) {
+          onDeleteSuccess();
+        }
       } else {
         console.error("Failed to delete item:", response.statusText);
       }
@@ -86,27 +95,20 @@ const [show, setShow] = useState(false);
         <div className="d-flex contents">
           <p className="text-ls">Are you want to delete this id</p>
         </div>
-      
-       
-            <div className="buttons-delete">
-          <button
-            type="submit"
-            className="buttons-arrange border">
+  
+        <div className="buttons-delete">
+          <button type="submit" className="buttons-arrange border">
             delete
           </button>
           <button onClick={() => setopen(false)} className="buttons-arrange">
             Cancel
           </button>
-           
         </div>
       </form>
     ) : type === "update" ? (
-      
-      <Upd  type="update" id={id} voterid={voterid} email={email} dob={dob} location={location}/>
-     
-    
+      <Updateform type="update" id={id} partyname={partyname} candidatename={candidatename} districtname={districtname} />
     ) : (
-      <Userform type="add"  />
+      <Userform type="add" />
     );
   };
   return (
@@ -134,4 +136,4 @@ const [show, setShow] = useState(false);
   );
 };
 
-export default Deleted;
+export default Deletedid;

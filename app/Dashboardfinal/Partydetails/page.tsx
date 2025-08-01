@@ -18,7 +18,7 @@ type voted={
 }
 const userdata=[{
     id:"1",
-    party:"DMK",
+    party:"DMk",
     UserVoterId:"TN@123",
     UserDoB:"12=09-2024",
     UserDistrict:"Chennai"
@@ -44,7 +44,7 @@ const userdata=[{
     {
     id:"5",
     party:"INC",
-    UserVoterId:"TN@123",
+    UserVoterId:"TN@12390",
     UserDoB:"12=09-2024",
     UserDistrict:"Coimbatore"},
     
@@ -100,7 +100,7 @@ export default function page() {
       {/* {item.voterid} */}
       <td className="hidden md:table-cell">{item.id}</td>
       {/* {item.dob} */}
-      <td className="hidden md:table-cell">tn123</td>
+      <td className="hidden md:table-cell">{item.UserDistrict}</td>
       {/* {item.district} */}
       <td className="hidden md:table-cell">{item.UserDistrict}</td>
       <td>thirunelveli</td>
@@ -118,7 +118,7 @@ export default function page() {
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       <div className="flex items-center justify-between">
-        <h6 className="hidden md:block text-lg font-smibold">Voted Details</h6>
+        {/* <h6 className="hidden md:block text-lg font-smibold">Voted Details</h6> */}
 
         <div className="flex flex-col md:flex-row items-center gap-4  w-full md:w-auto">
           <Tablesearch />

@@ -18,27 +18,27 @@ type userda = {
   data: any[];
 };
 const columns = [
+  // {
+  //   header: "info",
+  //   accessor: "info",
+  // },
   {
-    header: "info",
-    accessor: "info",
-  },
-  {
-    header: "UserId",
+    header: "Id",
     accessor: "UserId",
     className: "hidden md:table-cell",
   },
   {
-    header: "Uservoterid",
-    accessor: "Uservoterid",
+    header: "voterid",
+    accessor: "voterid",
     className: "hidden md:table-cell",
   },
   {
-    header: "UservDOB",
+    header: "DOB",
     accessor: "UservDOB",
     className: "hidden md:table-cell",
   },
   {
-    header: "UserDistrict",
+    header: "District",
     accessor: "UserDistrict",
     className: "hidden md:table-cell",
   },
@@ -50,30 +50,21 @@ const columns = [
 export default function page() {
   const [datas, setdatas] = useState<any[]>([]);
   const [page, addpage] = useState(0);
-  // const [datas, setdatas] = useState<{ content: any[] }>({ content: [] });
-const handle= async (userid:string)=>{
-   console.log("userid"+userid);
-}
-  const empty = () => {
-    console.log("users");
-    console.log(datas);
-  };
-  useEffect(() => {
-    empty();
-  }, [datas]);
+
+
   useEffect(() => {
     data();
+    
   }, [page]);
 
   const data = () => {
-    // fetch("http://localhost:8080/api/users")
-    // fetch("http://localhost:8080/api/users/page?page=0&size=3")
+   
     fetch(`http://localhost:8080/api/users/getUserList?num=${page}`)
       .then((res) => res.json())
       .then((da) => {
-        console.log(da);
+      
         setdatas(da);
-        // console.log("hlo"+da[0].email);
+       
       });
   };
   const renderRow=(item:userda) => (
@@ -81,11 +72,11 @@ const handle= async (userid:string)=>{
       className="border-b border-gray-200 even:bg-slate-50 text-sm "
       key={item.userId}
     >
-      <td className=" p-2 flex items-center gap-4">
+      {/* <td className=" p-2 flex items-center gap-4">
         <div className="flex flex-col">
-          {/* <h6 className=" object-cover font-semibold">{item.userId}</h6> */}
+          <h6 className=" object-cover font-semibold">{item.userId}</h6>
         </div>
-      </td>
+      </td> */}
       {/* {item.voterid} */}
       
       <td className=" hide-table">{item.userId}
@@ -101,8 +92,8 @@ const handle= async (userid:string)=>{
       <td>
         <div className="update">
           {/* <Link rel="stylesheet" href="" > */}
-            <Deleted table="user" type="delete" id={item.userId} />
-             <Deleted table="user" type="update" />
+            <Deleted table="user" type="delete" id={item.userId}  onDeleteSuccess={data}/>
+             <Deleted table="user" type="update" id={item.userId} voterid={item.voterid} email={item.email} dob={item.dob} location={item.location} />
              {/* </Link> */}
          
         </div>
@@ -127,9 +118,9 @@ const handle= async (userid:string)=>{
             {/* <button className="iconcolor ">
               <Image src="/add.png" alt="" height={14} width={14} />
             </button> */}
-            <Deleted table="user" type="shared image" />
+            {/* <Deleted table="user" type="shared image" />
             <Deleted table="user" type="filter" />
-            <Deleted table="user" type="add" />
+            <Deleted table="user" type="add" /> */}
           </div>
         </div>
       </div>
@@ -137,7 +128,7 @@ const handle= async (userid:string)=>{
 
       <UserTable columns={columns} renderRow={renderRow} data={datas} />
       {/* <Pagination /> */}
-      <div className="d-flex gap-3 justify-content-end">
+      <div className="d-flex gap-3  justify-content-end mt-6">
         <button
           className="py-2 px-4 rounded-md bg-slate-200 rounded text-xs font-semibold "
           onClick={(e) => addpage((prev) => prev - 1)}
@@ -149,7 +140,7 @@ const handle= async (userid:string)=>{
           className="py-2 px-4 rounded-md bg-slate-200 text-xs rounded font-semibold "
           //  onClick={(e)=>{setvalue((prev)=>prev+1)}}
           onClick={(e) => addpage((prev) => prev + 1)}
-          disabled={page == 3 ? true : false}
+          disabled={page == 1 ? true : false}
         >
           Next
         </button>

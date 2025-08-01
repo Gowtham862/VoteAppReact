@@ -20,23 +20,23 @@ const menuitems = [
       },
       {
         icon: "/account.png",
-        label: "Voter",
+        label: "Partydetails",
         href: "/Dashboardfinal/Votedetails",
       },
       {
         icon: "/account.png",
-        label: "Party details",
+        label: "Vote details",
         href: "/Dashboardfinal/Partydetails",
       },
       {
         icon: "/events.png",
         label: "Events",
-        href: "/",
+        href: "",
       },
        {
         icon: "/a.png",
         label: "Announcements",
-        href: "/",
+        href: "",
       },
       
     ],
@@ -66,7 +66,7 @@ const menuitems = [
 ];
 export default function menu() {
   return (
-    <div className="mt-4 text-sm ">
+    <div className=" text-sm ">
       
       {menuitems.map((menu) => (
         <div className=" list-top" key={menu.tittle}>

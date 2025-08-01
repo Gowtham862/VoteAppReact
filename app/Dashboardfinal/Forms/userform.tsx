@@ -15,10 +15,10 @@ const schema = z.object({
     .min(8, { message: "password must be a least 3 characters" }),
   firstName: z
     .string()
-    .min(8, { message: "FirstName must be a least 3 characters" }),
+    .min(8, { message: "FirstName must be a least 8 characters" }),
   LastName: z
     .string()
-    .min(8, { message: "LastName must be a least 3 characters" }),
+    .min(1, { message: "LastName must be a least 1 characters" }),
   phonenumber: z
     .string()
     .min(8, { message: "phonenumber must be a least 3 characters" }),
@@ -26,7 +26,7 @@ const schema = z.object({
   DOB: z.string().min(8, { message: "DOB is required!" }),
 });
 type Inputs = z.infer<typeof schema>;
-const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
+const userform = ({ type, data }: { type: "add" | "update"; data?: any ;}) => {
   const {
     register,
     handleSubmit,
@@ -43,6 +43,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
       <span className="learn-font"> Authentication information</span>
       <div className="content-wrap">
         <InputField
+        
           label="username"
           name="username"
           defaultValue={data?.username}
@@ -50,13 +51,14 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.username}
         />
         <InputField
+        
           label="Email"
           name="Email"
           defaultValue={data?.Email}
           register={register}
           error={errors?.email}
         />
-        <InputField
+        <InputField 
           label="password"
           name="password"
           defaultValue={data?.password}
@@ -67,6 +69,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
       <span className=" learn-font ">personal Information</span>
       <div className="content-wrap">
         <InputField
+         
           label="Firstname"
           name="Firstname"
           defaultValue={data?.Firstname}
@@ -74,6 +77,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.firstName}
         />
         <InputField
+        
           label="LastName"
           name="LastName"
           defaultValue={data?.LastName}
@@ -81,6 +85,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.LastName}
         />
         <InputField
+         
           label="Phone"
           name="Phone"
           defaultValue={data?.Phone}
@@ -89,6 +94,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
         />
 
         <InputField
+        
           label="Firstname"
           name="Firstname"
           defaultValue={data?.Firstname}
@@ -96,6 +102,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.firstName}
         />
         <InputField
+         
           label="LastName"
           name="LastName"
           defaultValue={data?.LastName}
@@ -103,6 +110,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.LastName}
         />
         <InputField
+         
           label="Phone"
           name="Phone"
           defaultValue={data?.Phone}
@@ -110,6 +118,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.phonenumber}
         />
         <InputField
+        
           label="dob"
           name="dob"
           defaultValue={data?.dob}
@@ -117,7 +126,7 @@ const userform = ({ type, data }: { type: "add" | "update"; data?: any }) => {
           error={errors?.DOB}
         />
       </div>
-      <button className="bg-blue-400 p-2 text-white rounded-md ">Submit</button>
+      <button type="submit" className="bg-blue-400 p-2 text-white rounded-md ">Submit</button>
     </form>
   );
 };

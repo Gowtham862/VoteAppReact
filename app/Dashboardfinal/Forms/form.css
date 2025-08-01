@@ -17,3 +17,26 @@
     flex-direction: column;
     gap: 5;
 }
+.optionval{
+    width: 200px;
+  margin-top: 20px;
+  
+}
+.optionval:focus{
+    outline: none !important;
+    background-color: #d8dee9;
+
+}
+.css-13cymwt-control{
+    border: 1px solid #d8dee9;
+         background-color:rgb(243,244,246) !important;
+
+}
+.css-13cymwt-control:focus{
+    outline: none !important;
+    /* border: 1px solid rgb(243, 243, 11); */
+}
+
+.sss{
+   
+}

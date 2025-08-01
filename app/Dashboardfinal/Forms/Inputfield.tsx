@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 
-type InputFieldProps= {
+type InputFieldProps = {
   label: string;
   type?: string;
   register: any;
   name: string;
+
   defaultValue?: string;
   error?: {
     message?: string;
@@ -20,10 +21,11 @@ const InputField = ({
   defaultValue,
   error,
   inputProps,
+
 }: InputFieldProps) => {
   return (
     <div className="flex flex-col  w-full md:w-1/4">
-      <label className="text-sm text-gray-300">{label}</label>
+      <label className="text-sm font-semibold text-blue-800">{label}</label>
       <input
         type={type}
         {...register(name)}

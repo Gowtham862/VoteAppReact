@@ -6,7 +6,16 @@ import { useRouter } from "next/navigation";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { useSearchParams } from "next/navigation";
 
-
+ const partyLogos=
+  {
+      ADMK: "admkk.png",
+   TVk:"tvkvijay.webp",
+  DMK: "dmk2.webp",
+  INC:"inc.webp",
+  Bjp: "Bjb.webp",
+  DMDK: "go.png"
+  }
+ 
 
 
 
@@ -40,7 +49,7 @@ export default function Page() {
       console.log(partyId)
       // console.log("notcomplede" + validtoken);
       const response = await fetch(
-        "http://192.168.68.138:8080/api/voting/cast",
+        "http://localhost:8080/api/voting/cast",
         {
           method: "POST",
           headers: {
@@ -126,9 +135,10 @@ export default function Page() {
                 <td className="">
           
                   <img
-                    // src={partyLogos[item.partyName]}
+                    src={partyLogos[item.partyName]}
                     // src={item.partySymbol}
-                     src={`data:image/png;base64,${item.partySymbol}`}
+                    //  src={`data:image/png;base64,${item.partySymbol}`}
+                    // src='./exit.png'
                     width="40"
                     className="rounded"
                     alt={item.partyName}
