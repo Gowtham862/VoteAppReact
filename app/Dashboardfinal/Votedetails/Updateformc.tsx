@@ -156,7 +156,7 @@ const handleChange = (option: OptionType | null) => {
         <Select value={selectedOption} 
           className="optionval text-gray-800"
           defaultValue={data?.districtname}
-         
+          isClearable
           onChange={ handleChange }
           options={districts}
           placeholder={districtname}

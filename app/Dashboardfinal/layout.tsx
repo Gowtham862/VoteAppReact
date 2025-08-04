@@ -54,7 +54,7 @@ export default function Dashboardlayout({
     
     </div>
     {/* gowtham */}
-     <div className=" width-left md:w-[92%] lg:w-[84%] xl:w-[86%]  overflow-scroll">
+     <div className=" width-left md:w-[92%] lg:w-[84%] xl:w-[86%] no-scrollbar overflow-scroll overflow-x-hidden">
 
 <Navbar/>
      {children}

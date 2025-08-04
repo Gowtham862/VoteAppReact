@@ -3,7 +3,7 @@ import Userform from "../Forms/userform";
 
 import Image from "next/image";
 import "../Admind/Deleted.css";
-
+import { deleteparty } from "./Service/getallparty";
 import { toast } from "react-toastify";
 import Updateform from "./Updateformc";
 type DeletedProps = {
@@ -59,35 +59,18 @@ const Deletedid = ({
   };
   const deleteItem = async (e: any) => {
     e.preventDefault();
-
-    console.log("not sucess");
-    try {
-      const response = await fetch(
-        `http://localhost:8080/candidates/${id}/deletecandi`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      if (response.ok) {
-        toast(`user id ${id} sucessfully deleted`);
-
-        console.log(`Item with ID ${id} deleted successfully.`);
-
-        setmessage(`user Id ${id} deleted successfully`);
-        setopen(false);
-        if (onDeleteSuccess) {
+    console.log(id)
+    const response= await deleteparty(id);
+    console.log(response.data)
+    if(response)
+    {
+           toast(`candidate id ${id} sucessfully deleted`);
+    }
+     if (onDeleteSuccess) {
           onDeleteSuccess();
         }
-      } else {
-        console.error("Failed to delete item:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error during deletion:", error);
-    }
+    console.log("not sucess");
+    
   };
   const Form = () => {
     return type === "delete" ? (

@@ -11,6 +11,7 @@ import Deleteid from "../../Dashboardfinal/Votedetails/Deleteid";
 import "../../Dashboardfinal/Parent/Tablesearc.css";
 import "../../Dashboardfinal/Parent/Paginat.css";
 import Link from "next/link";
+import { getallparty } from "./Service/getallparty";
 
 type Candidate = {
   candiId: number;
@@ -80,7 +81,12 @@ export default function page() {
 useEffect(() => {
     datas();
   }, [page]);
-  const datas=() => {
+  const datas=async() => {
+     
+    const response= await getallparty(page);
+    // console.log(response.data)
+    //   setData(response.data);
+
     fetch(`http://localhost:8080/candidates/getcandidate?num=${page}`)
       .then((response) => {
         if (!response.ok) {

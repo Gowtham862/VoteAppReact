@@ -1,38 +1,30 @@
 "use client";
-// import React from "react";
-// import { useState } from "react";
 import React, { useState, useEffect } from "react";
-
 import "./signup.css";
 import Link from "next/link";
+
+import { fetchdistricts } from "../About/Signupservice/ditrict";
 export default function page() {
   const [districts, setDistricts] = useState([]);
-
   useEffect(() => {
-    user();
+   user()
   }, []);
-  const user = () => {
-    console.log("gowtham get ready");
-    fetch("http://localhost:8080/district/all")
-      // fetch("http://192.168.68.106:5000/api/districts")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(res);
-        console.log("Fetched data:", data);
-        console.log("Array length:", data.length);
-        const l=data.length;
-        if (Array.isArray(data)) {
-          setDistricts(data);
-        }
-        // if (Array.isArray(data) && data.length === 0) {
-        //     // setDistricts(data);
-        //   console.warn(" The array is empty.");
-        // }
-      })
-      .catch((err) => {
-        console.error("Fetch error:", err);
-      });
-  };
+
+  const user=async ()=>{
+    try {
+      const res = await fetchdistricts();
+      console.log(res.data);
+      if(res&&res.data)
+      {
+        setDistricts(res.data); 
+      }
+     
+    } catch (error) {
+      console.error("Error fetching districts:", error);
+    }
+  }
+ 
+ 
   const [email, setemail] = useState("");
   const [voterid, setvoterid] = useState("");
   const [dob, setdob] = useState("");

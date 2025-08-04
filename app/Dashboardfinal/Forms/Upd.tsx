@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Select from "react-select";
-import makeAnimated from 'react-select/animated';
 import "./form.css";
 import InputField from "./Inputfield";
 import { z } from "zod";
@@ -13,7 +12,7 @@ const options = [
   { value: "strawberry", label: "Strawberry" },
   { value: "vanilla", label: "Vanilla" },
 ];
-const animatedComponents = makeAnimated();
+
 const gow = z.object({
   voterid: z
     .string()
@@ -215,7 +214,7 @@ const Upd = ({
         <Select
           className="optionval text-gray-800"
           // isLoading
-           components={animatedComponents}
+          
           defaultValue={selectedOption}
           onChange={setSelectedOption}
           options={districts}
@@ -225,9 +224,9 @@ const Upd = ({
       </div>
       <button type="submit" className="bg-blue-400 p-2 text-white rounded-md ">
         Submit
-      </button>
-    </form>
-  );
+        </button>
+      </form>
+    );
 };
 
 export default Upd;

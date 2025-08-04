@@ -7,7 +7,9 @@ import UserTable from "./UserTable";
 import Deleted from "../../Dashboardfinal/Admind/Deleted";
 import { useState } from "react";
 import "../../Dashboardfinal/Parent/Tablesearc.css";
-import "../../Dashboardfinal/Parent/Paginat.css";
+import {getalluser} from"../Parent/Service/userdetails";
+  
+import "../../Dashboardfinal/Parent/Service/userdetails"
 import Link from "next/link";
 type userda = {
   userId: string;
@@ -57,15 +59,10 @@ export default function page() {
     
   }, [page]);
 
-  const data = () => {
+  const data = async() => {
+    const re=await getalluser(page);
+     setdatas(re.data);
    
-    fetch(`http://localhost:8080/api/users/getUserList?num=${page}`)
-      .then((res) => res.json())
-      .then((da) => {
-      
-        setdatas(da);
-       
-      });
   };
   const renderRow=(item:userda) => (
     <tr
