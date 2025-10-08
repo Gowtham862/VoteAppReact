@@ -52,7 +52,7 @@ const menuitems = [
       {
         icon: "/settings.png",
         label: "Setting",
-        href: "/profile",
+        href: "/Homeai",
       },
       {
         icon: "/logout.png",

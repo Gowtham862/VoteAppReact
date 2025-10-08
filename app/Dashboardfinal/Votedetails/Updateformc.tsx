@@ -16,7 +16,7 @@ const options: OptionType[] = [
 const gow = z.object({
   candidatename: z
     .string()
-    .min(8, { message: "Voterid must be at least 8 characters" }),
+    .min(8, { message: "Candidatename must be at least 8 characters" }),
   districtname: z.string().min(3, { message: "Invalid Email address!" }),
   partyName: z
     .string()
@@ -37,6 +37,9 @@ const Updateform = ({
   partyname,
   candidatename,
   districtname,
+   districtid,
+   partyid,
+  
 }: {
   type: "update";
   data?: any;
@@ -44,6 +47,8 @@ const Updateform = ({
   partyname: any;
   candidatename: string;
   districtname:any
+  districtid:any
+  partyid:any
 }) => {
   const [open, setopen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
@@ -78,11 +83,11 @@ const handleChange = (option: OptionType | null) => {
       body: JSON.stringify({
         candi_name: data.candidatename,
         district: {
-          id: 1,
+          id:  districtid,
           name: data.districtname,
         },
         party: {
-          partyId: 3,
+          partyId: partyid,
           partyName: data.partyName,
           partyDesp: "tamilaga vetri kalagam",
         },
@@ -106,7 +111,7 @@ const handleChange = (option: OptionType | null) => {
   useEffect(() => {
     user();
   }, []);
-  const user = () => {
+  const user =async () => {
     console.log("gowtham get ready");
     fetch("http://localhost:8080/district/all")
       .then((res) => res.json())
@@ -133,10 +138,11 @@ const handleChange = (option: OptionType | null) => {
       <h6 className="text-xl font-semibold">
         Hey Admin you can update user {id} here{" "}
       </h6>
+      {/* <h6>{partyid }</h6> */}
       <span className="learn-font"> Authentication information</span>
       <div className="content-wrap"></div>
       <span className=" learn-font ">personal Information</span>
-     <h1>{districtname}</h1>
+     {/* <h1>{districtname}</h1> */}
       <div className="content-wrap ">
         <InputField
           label="Candidatename"

@@ -97,9 +97,14 @@ const Upd = ({
   });
 
   const onsubmit = handleSubmit((data) => {
+    console.log("hlo");
     console.log(selectedOption.label);
     console.log(JSON.stringify(data));
     console.log(id);
+    if(data.dob&&data.email&&data.location&&selectedOption.label)
+    {
+
+    
     fetch(`http://localhost:8080/api/users/${id}/update`, {
       method: "PUT",
       headers: {
@@ -111,7 +116,8 @@ const Upd = ({
         dob: data.dob,
         location: selectedOption.label,
       }),
-    })
+    }
+  )
       .then((response) => {
         if (response.ok) {
           setopen(false);
@@ -125,7 +131,11 @@ const Upd = ({
       })
       .then((data) => console.log(data))
       .catch((error) => console.error("Error:", error));
-  });
+}
+else{
+  toast("field cannot be empty")
+}
+});
 
   return (
     <form className="form-content" onSubmit={onsubmit}>

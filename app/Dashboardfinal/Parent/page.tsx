@@ -53,6 +53,16 @@ export default function page() {
   const [datas, setdatas] = useState<any[]>([]);
   const [page, addpage] = useState(0);
 
+  const formatDate =(dateString: string | number | Date) =>{
+    if(!dateString) return " ";
+    const date = new Date(dateString);
+    const day =String(date.getDate()).padStart(2,'0');
+     const month =String(date.getMonth()+1).padStart(2,'0');
+      const year =date.getFullYear();
+       return `${day}-${month}-${year}`;
+ 
+
+  }
 
   useEffect(() => {
     data();
@@ -84,10 +94,10 @@ export default function page() {
 
       <td className=" hide-table">{item.voterid}</td>
       {/* {item.district} */}
-      <td className=" hide-table">{item.dob}</td>
+      <td className=" hide-table">{formatDate(item.dob?.split('T')[0])}</td>
       <td>{item.location}</td>  
       <td>
-        <div className="update">
+        <div className="flex items-center gap-2">
           {/* <Link rel="stylesheet" href="" > */}
             <Deleted table="user" type="delete" id={item.userId}  onDeleteSuccess={data}/>
              <Deleted table="user" type="update" id={item.userId} voterid={item.voterid} email={item.email} dob={item.dob} location={item.location} />
@@ -103,7 +113,7 @@ export default function page() {
         <h6 className="hidden md:block text-lg font-smibold">All users</h6>
 
         <div className="flex flex-col md:flex-row items-center gap-4  w-full md:w-auto">
-          <Tablesearch />
+          <Tablesearch  data={datas}/>
           <div className="flex items-center gap-4 self-end">
             {/* <button className="w-8 h-8   iconcolor  ">
               <Image src="/shared image.png" alt="" height={14} width={14} />
@@ -123,7 +133,7 @@ export default function page() {
       </div>
       {/*user list */}
 
-      <UserTable columns={columns} renderRow={renderRow} data={datas} />
+      <UserTable columns={columns} renderRow={renderRow} data={datas}  />
       {/* <Pagination /> */}
       <div className="d-flex gap-3  justify-content-end mt-6">
         <button

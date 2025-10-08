@@ -6,6 +6,7 @@ export default function Navbar() {
         <div className=' admin-left p-4'>
             {/* <p>hlo</p> */}
         <div className= 'hidden md:flex flex  items-center gap-2 px-2' >
+        
              {/* <Image width={20}  height={10} src='/search.png' alt='search'/> */}
               {/* <Image width={20}  height={10} src='/search.png' alt='search'/> */}
              {/* <input type='text' className=' p-2 input-edit ' placeholder='search'/>  */}
@@ -20,8 +21,8 @@ export default function Navbar() {
         </div> */}
         <div className='flex flex-col gap-1'>
             {/* <span className='text-Xs leading-3 font-medium'>Admin</span> */}
-              <span className=' nav-left text-Xs font-medium leading-3  text-right'>Admin</span>
-            <span className=' nav-left leading-3  text-right'>Gowtham</span>
+              <span className=' nav-left text-Xs font-medium leading-3  text-right'>User</span>
+            {/* <span className=' nav-left leading-3  text-right'>Gowtham</span> */}
         </div>
        
         </div>

@@ -9,7 +9,7 @@ import { useSearchParams } from "next/navigation";
  const partyLogos=
   {
       ADMK: "admkk.png",
-   TVk:"tvkvijay.webp",
+   TVK:"tvkvijay.webp",
   DMK: "dmk2.webp",
   INC:"inc.webp",
   Bjp: "Bjb.webp",

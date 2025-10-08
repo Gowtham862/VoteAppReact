@@ -23,6 +23,7 @@ export default function Home() {
   const [candidates, setCandidates] = useState([]);
   const [token, setToken] = useState(null);
   const[visible,setvisible]=useState(false);
+  const[loading,setloading]=useState(false);
 
 
   
@@ -37,6 +38,7 @@ export default function Home() {
     // const tok = localStorage.getItem("token");
     // console.log("welcome" + tok);
     console.log("sucess abi");
+   
     console.log(email);
     if (sentemail && sentdistrict) {
       console.log(sentdistrict);
@@ -59,6 +61,7 @@ export default function Home() {
           user.push(`/Votetable?email=${encodeURIComponent(sentemail)}`);
         })
         .catch((err) => console.error("Error in candidate API:", err));
+        // setloading(false)
     }
   }, [sentemail, sentdistrict]);
   const togglePassword = () => {
@@ -67,6 +70,7 @@ export default function Home() {
 
   const handlelogin = async (e) => {
     e.preventDefault();
+     setloading(true)
     if (!email) {
       seterrorm("Email can not be null");
       setTimeout(() => {
@@ -113,6 +117,9 @@ export default function Home() {
       setvoterId("");
     } catch (error) {
       console.error("Error signing up:", error);
+    }
+    finally{
+      setloading(false)
     }
   };
   const signup = (e) => {
@@ -161,6 +168,7 @@ export default function Home() {
 
           <div className="mb-3">
             <button
+              disabled={loading}
               type="submit"
               className="btn btn bg-warning text-primary change btn-sm w-100"
             >

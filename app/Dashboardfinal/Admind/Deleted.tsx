@@ -3,9 +3,8 @@ import Userform from "../Forms/userform";
 import Upd from "../Forms/Upd";
 import Image from "next/image";
 import "./Deleted.css";
-import "../../Dashboardfinal/Admind/Service/deleteuser"
+
 import { toast } from "react-toastify";
-import { deleteuse } from "../../Dashboardfinal/Admind/Service/deleteuser";
 type DeletedProps = {
   table: "user" | "voter" | "event";
   type: "add" | "filter" | "shared image" | "delete" | "update";
@@ -46,17 +45,40 @@ const [show, setShow] = useState(false);
   console.log(voter);
 
  }
- 
+  // useEffect(()=>{
+    
+  // },[voterid])
+
    const close=(()=>{
       setShow(false);
     })
   const deleteItem = async (e:any) => {
     e.preventDefault();
-    console.log(id);
-     const response=await deleteuse(id);
-      if (response) {
-          toast(`user id ${id} deleted succesffully`)
+    
+    console.log("not sucess")
+    try {
+      const response = await fetch(`http://localhost:8080/api/users/${id}/delete`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+          toast(`user ${id} deleted succesffully`)
+          console.log(`Item with ID ${id} deleted successfully.`);
+          setmessage(`user Id ${id} deleted successfully`);
+          setopen(false) 
+           if (onDeleteSuccess) {
+          onDeleteSuccess(); 
+          }
+          
+      } else {
+        console.error("Failed to delete item:", response.statusText);
       }
+    } catch (error) {
+      console.error("Error during deletion:", error);
+    }
   };
   const Form = () => {
     return type === "delete" ? (

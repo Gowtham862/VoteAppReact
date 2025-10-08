@@ -121,7 +121,7 @@ export default function page() {
         {/* <h6 className="hidden md:block text-lg font-smibold">Voted Details</h6> */}
 
         <div className="flex flex-col md:flex-row items-center gap-4  w-full md:w-auto">
-          <Tablesearch />
+          {/* <Tablesearch /> */}
           <div className="flex items-center gap-4 self-end">
             <button className="w-8 h-8   iconcolor  ">
               <Image src="/shared image.png" alt="" height={14} width={14} />

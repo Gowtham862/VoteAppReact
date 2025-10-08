@@ -132,11 +132,11 @@ useEffect(() => {
       <td>
         <div className="flex items-center gap-2">
           {/* <Link href=""> */}
-          <Deleteid table="user" type="delete" id={item.candiId} onDeleteSuccess={datas} candidatename="" districtname=""/>
-           <Deleteid table="user" type="update" id={item.candiId}  partyname={item.party.partyName}   candidatename={item.candi_name} districtname={item.district.name}/>
+          <Deleteid table="user" type="delete" id={item.candiId} onDeleteSuccess={datas} candidatename="" districtname="" districtid="" partyid=""/>
+           <Deleteid table="user" type="update" id={item.candiId}  partyname={item.party.partyName}   candidatename={item.candi_name} districtname={item.district.name}
+           districtid={item.district.id} partyid={item.party.partyId} />
             {/* <button className="w-7 h-7 flex items-center justify-center rounded-full">
               <Image src="/delete.jpg" alt="" width={20} height={20} />
-             
             </button> */}
           {/* </Link> */}
         </div>
@@ -149,7 +149,7 @@ useEffect(() => {
         <h6 className="hidden md:block text-lg font-smibold">Voted Details</h6>
 
         <div className="flex flex-col md:flex-row items-center gap-4  w-full md:w-auto">
-          <Tablesearch />
+          {/* <Tablesearch /> */}
           <div className="flex items-center gap-4 self-end">
             <button className="w-8 h-8   iconcolor  ">
               <Image

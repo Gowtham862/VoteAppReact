@@ -3,7 +3,7 @@ import Userform from "../Forms/userform";
 
 import Image from "next/image";
 import "../Admind/Deleted.css";
-import { deleteparty } from "./Service/getallparty";
+
 import { toast } from "react-toastify";
 import Updateform from "./Updateformc";
 type DeletedProps = {
@@ -14,6 +14,8 @@ type DeletedProps = {
    partyname?:any,
    candidatename:string,
    districtname:any,
+   districtid:any,
+   partyid:any
   onDeleteSuccess?: () => void;
 };
 
@@ -25,6 +27,8 @@ const Deletedid = ({
    partyname,
    candidatename,
    districtname,
+   districtid,
+   partyid,
   onDeleteSuccess,
 }: DeletedProps) => {
   const size =
@@ -59,18 +63,36 @@ const Deletedid = ({
   };
   const deleteItem = async (e: any) => {
     e.preventDefault();
-    console.log(id)
-    const response= await deleteparty(id);
-    console.log(response.data)
-    if(response)
-    {
-           toast(`candidate id ${id} sucessfully deleted`);
-    }
-     if (onDeleteSuccess) {
+
+    console.log("not sucess");
+    try {
+      const response = await fetch(
+        `http://localhost:8080/candidates/${id}/deletecandi`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        setopen(false);
+        toast(`user id ${id} sucessfully deleted`);
+
+        console.log(`Item with ID ${id} deleted successfully.`);
+
+        setmessage(`user Id ${id} deleted successfully`);
+        
+        if (onDeleteSuccess) {
           onDeleteSuccess();
         }
-    console.log("not sucess");
-    
+      } else {
+        console.error("Failed to delete item:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during deletion:", error);
+    }
   };
   const Form = () => {
     return type === "delete" ? (
@@ -80,7 +102,7 @@ const Deletedid = ({
         </div>
   
         <div className="buttons-delete">
-          <button type="submit" className="buttons-arrange border">
+          <button  type="submit" className="buttons-arrange border">
             delete
           </button>
           <button onClick={() => setopen(false)} className="buttons-arrange">
@@ -89,7 +111,8 @@ const Deletedid = ({
         </div>
       </form>
     ) : type === "update" ? (
-      <Updateform type="update" id={id} partyname={partyname} candidatename={candidatename} districtname={districtname} />
+      <Updateform type="update" id={id} partyname={partyname} candidatename={candidatename} districtname={districtname} 
+      districtid={districtid} partyid={partyid}/>
     ) : (
       <Userform type="add" />
     );

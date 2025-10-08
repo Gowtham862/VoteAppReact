@@ -4,13 +4,15 @@ import type { Metadata } from "next";
 import  Menu from "../Component/Menu"
 import Navbar from "../Component/Navbar"
 import Link from "next/link";
+import Chatpage from "./Chatpag/Chatpage";
  import { useState } from "react";
 // import Layout from '../../app/Dashboardfinal/Votedetails/Layout'
-import './Lay.css'
+
 import { GrUserAdmin } from "react-icons/gr";
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Geist, Geist_Mono } from "next/font/google";
-import './Lay.css'
+import './Layout.scss'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -44,11 +46,12 @@ export default function Dashboardlayout({
     <div className="h-screen flex">
     <div className="gow md:w-[8%] lg:w-[16%] xl:w-[14%] "   >
       <Link href='/' className="flex items-center text-decoration-none justify-center  lg:justify-start p-4 gap-2" >
-        <GrUserAdmin style={{color:"white"}} size={20} />
-        <span className="text-gray-400 change-cur font-bold">Admin</span>
+         <img src="/ai.png" height={30} width={30} alt="" />
+        <span className="">Gowtham AI</span>
      </Link>
    <div  className="">
-   <Menu/>
+   {/* <Menu/> */}
+     <Chatpage/>
    </div>
 
     
@@ -56,7 +59,7 @@ export default function Dashboardlayout({
     {/* gowtham */}
      <div className=" width-left md:w-[92%] lg:w-[84%] xl:w-[86%] no-scrollbar overflow-scroll overflow-x-hidden">
 
-<Navbar/>
+    <Navbar/>
      {children}
      </div>
     

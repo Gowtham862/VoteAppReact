@@ -1,0 +1,23 @@
+.layout{
+    /* 16 ps top bottom */
+    /* 64 left right */
+     background-color: #1a123a;
+    padding: 16px 64px;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column; */
+       header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        display: flex;
+        text-decoration: none;
+        gap: 10px;
+    }
+    /* main{
+  flex: 1;
+  background-color: aqua;
+    } */
+}
